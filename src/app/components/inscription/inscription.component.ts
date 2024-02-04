@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-inscription',
-  templateUrl: './inscription.component.html',
-  styleUrls: ['./inscription.component.css']
+  templateUrl: './inscription.component.html'
 })
 export class InscriptionComponent implements OnInit {
 
