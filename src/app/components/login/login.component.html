@@ -1,3 +1,4 @@
+
 <div class="">
   <div class="container">
       <div class="row">
@@ -5,13 +6,13 @@
               <h4>Bienvenue</h4>
               <p>Veuillez-vous connecter pour bénéficier de nos services en ligne</p>
 
-             <div class="feedback">
+            <div class="feedback">
                 <div *ngIf="feedBack.message === ''; else error">
                 </div>
                 <ng-template #error>
                   <p style="color: tomato;">{{ feedBack.message }} <i class="fa-sharp fa-regular fa-warning"></i> </p>
                 </ng-template>
-             </div>
+            </div>
 
               <div class="form-group col-md-9">
                 <i class="fa-sharp fa-regular fa-envelope"></i> 
@@ -20,7 +21,7 @@
 
               <div class="form-group col-md-9">
                 <i class="fa-sharp fa-regular fa-eye"></i> 
-                <input type="password" class="form-control" [(ngModel)]="user.motdepasse" name="motdepasse" placeholder="Mot de passe">
+                <input type="password" class="form-control" [(ngModel)]="user.mdp" name="mdp" placeholder="Mot de passe">
               </div>
 
               <p>Pas encore de compte? <a [routerLink]="['/inscription']"> S'inscrire ici</a></p>
@@ -32,7 +33,4 @@
           </div>
         </div>
   </div>
-</section>
-
-<app-footer></app-footer>
 </div>

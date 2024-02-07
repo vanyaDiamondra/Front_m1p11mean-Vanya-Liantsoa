@@ -24,13 +24,13 @@ export class LoginComponent implements OnInit {
         this.feedBack = response;
         if( this.feedBack.status === "200" ){
           window.localStorage.setItem('tokenuser', this.feedBack.token);
-          this.router.navigate(['/']);
+          this.router.navigate(['/accueil']);
         }
       },
       error => {
         console.error('Error:', error.error);
         this.feedBack.message=error.error.message;
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
 
       }
     );
