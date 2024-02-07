@@ -1,0 +1,42 @@
+<app-header></app-header>
+<br>
+<section class="overflow-hidden" id="service-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <div>
+                   <img [src] = "services.image" alt="Chargement..."  style="object-fit: cover; object-position: center; height: 200px; display: block; margin: auto;">
+                </div>
+                <br>
+                <h5 style="text-align: center;">{{ services.nom }}</h5>
+                <p>{{ services.description }}</p>
+            </div>
+
+            <div class="col-xl-3">
+                <div class="row">
+                    <p>Prix :  {{ getFormattedPrice(services.prix) }} Ar</p>
+                    <p>Durée :  {{ services.duree }} Min</p>
+                    <p>Prendre rendez-vous ici : </p>
+                    <div class="form-group col-md-12">
+                        <input type="datetime-local" class="form-control" name="email" id="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-btn col-12">
+                        <button class="th-btn fw-btn">Prendre<i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+           <div class="col-xl-5">
+                <div class="row">
+                    <h5>Employés du service</h5>
+                    <p>Vous pouvez ajouter des préférences sur les employés de ce service.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<br>
+<app-footer></app-footer>
