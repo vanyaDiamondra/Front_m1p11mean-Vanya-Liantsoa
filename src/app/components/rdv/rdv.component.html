@@ -14,8 +14,8 @@
 
             <div class="col-xl-3">
                 <div class="row">
-                    <p>Prix :  {{ getFormattedPrice(services.prix) }} Ar</p>
-                    <p>Durée :  {{ services.duree }} Min</p>
+                    <p><i class="far fa-wallet"></i>  {{ getFormattedPrice(services.prix) }} Ar</p>
+                    <p><i class="far fa-clock"></i>  {{ services.duree }} Min</p>
                     <p>Prendre rendez-vous ici : </p>
                     <div class="form-group col-md-12">
                         <input type="datetime-local" class="form-control" name="email" id="email" placeholder="Email">
