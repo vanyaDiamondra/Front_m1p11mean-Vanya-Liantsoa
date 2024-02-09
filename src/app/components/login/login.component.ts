@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  user = { email: '', mdp: ''};
+  user = { email: 'liliandrianaivomamonjisoa@gmail.com', mdp: 'lili'};
   feedBack = { status: '', message: '', token: ''};
 
   constructor(private userService: UserService, private router: Router) {   }

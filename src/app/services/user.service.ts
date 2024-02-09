@@ -21,21 +21,12 @@ export class UserService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  // login(user: any): any {
-  //   this.http.post(this.baseurl+'/user/login', (user))
-  //       .subscribe(response => {
-  //         console.log('Réponse du serveur:', response);
-  //         return response;
-  //       });
-  // }
-
   seeProfil(): any {
     if( this.userToken != null ){
-      this.router.navigate(['/']);
+      this.router.navigate(['/accueil']);
     } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
     }
   }
-
 
 }

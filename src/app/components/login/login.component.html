@@ -14,19 +14,19 @@
                 </ng-template>
             </div>
 
-              <div class="form-group col-md-9">
+              <div class="form-group col-md-12">
                 <i class="fa-sharp fa-regular fa-envelope"></i> 
                 <input type="email" class="form-control"[(ngModel)]="user.email" name="email" id="email" placeholder="Email">
               </div>
 
-              <div class="form-group col-md-9">
+              <div class="form-group col-md-12">
                 <i class="fa-sharp fa-regular fa-eye"></i> 
                 <input type="password" class="form-control" [(ngModel)]="user.mdp" name="mdp" placeholder="Mot de passe">
               </div>
 
               <p>Pas encore de compte? <a [routerLink]="['/inscription']"> S'inscrire ici</a></p>
 
-              <div class="form-btn col-9">
+              <div class="form-btn col-12">
                 <button class="th-btn fw-btn" (click) = "doLogin()">Se connecter<i class="fa-solid fa-arrow-right ms-2"></i>
                 </button>
               </div>

@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { RdvComponent } from './components/rdv/rdv.component';
 import { ServicesalonComponent } from './components/servicesalon/servicesalon.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { EtoilesComponent } from './components/etoiles/etoiles.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ServicesalonComponent } from './components/servicesalon/servicesalon.co
     FooterComponent,
     InscriptionComponent,
     RdvComponent,
-    ServicesalonComponent
+    ServicesalonComponent,
+    LoaderComponent,
+    EtoilesComponent
   ],
   imports: [
     BrowserModule,

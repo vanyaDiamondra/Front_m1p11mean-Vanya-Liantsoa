@@ -1,42 +1,64 @@
-<app-header></app-header>
-<br>
-<section class="overflow-hidden" id="service-sec">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-4">
-                <div>
-                   <img [src] = "services.image" alt="Chargement..."  style="object-fit: cover; object-position: center; height: 200px; display: block; margin: auto;">
-                </div>
-                <br>
-                <h5 style="text-align: center;">{{ services.nom }}</h5>
-                <p>{{ services.description }}</p>
-            </div>
+<div *ngIf="chargementEnCours">
+    <app-loader></app-loader>
+</div>
 
-            <div class="col-xl-3">
-                <div class="row">
-                    <p>Prix :  {{ getFormattedPrice(services.prix) }} Ar</p>
-                    <p>Durée :  {{ services.duree }} Min</p>
-                    <p>Prendre rendez-vous ici : </p>
-                    <div class="form-group col-md-12">
-                        <input type="datetime-local" class="form-control" name="email" id="email" placeholder="Email">
+<div *ngIf="!chargementEnCours">
+    <app-header></app-header>
+    <br>
+    <section class="overflow-hidden" id="service-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4">
+                    <div>
+                    <img [src] = "services.image" alt="Chargement..."  style="object-fit: cover; object-position: center; height: 200px; display: block; margin: auto;">
                     </div>
+                    <br>
+                    <div style="text-align: center;">
+                        <h5 >{{ services.nom }}</h5>
+                        <div class="header-links">
+                            <ul>
+                                <li><i class="far fa-wallet"></i><a >{{ getFormattedPrice(services.prix) }} Ar</a></li>
+                                <li><i class="far fa-clock"></i><a>{{ services.duree }} Min</a></li>
+                            </ul>
+                            <ul>
+                                <li><b>Préférences</b> : <app-etoiles [score]="preferenceService"></app-etoiles></li>
+                            </ul>
+                        </div>
+                    </div><br>
+                    <p>{{ services.description }}</p>
+                </div>
 
-                    <div class="form-btn col-12">
-                        <button class="th-btn fw-btn">Prendre<i class="fa-solid fa-arrow-right ms-2"></i>
-                        </button>
+                <div class="col-xl-3">
+                    <div class="row">
+                        <img src="assets/img/illustration/rdv.svg" style="width: 60%; display: block; margin: auto;">
+                        <p style="text-align: center;"><b>Prendre rendez-vous</b></p><br>
+                        <div class="form-group col-md-12">
+                            <label for="email" style="color: grey;">Date et heure</label>
+                            <input type="datetime-local" class="form-control" name="email" id="email" placeholder="Email">
+                        </div>
+
+                        <div class="form-btn col-12">
+                            <button class="th-btn fw-btn">Prendre<i class="fa-solid fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-           <div class="col-xl-5">
-                <div class="row">
-                    <h5>Employés du service</h5>
-                    <p>Vous pouvez ajouter des préférences sur les employés de ce service.</p>
+            <div class="col-xl-5">
+                    <div class="row">
+                        <h5>Employés du service</h5>
+                        <p>Vous pouvez ajouter des préférences sur les employés de ce service.</p>
+                        <div class="col-xl-4" *ngFor="let employe of employeePreferee" >
+                            <img [src]="employe.photo" style="border-radius: 50%; width: 60%; display: block; margin: 0 auto;">
+                            <p style="text-align: center;">{{ employe.nom }} {{ employe.prenom }}</p>
+                            <app-etoiles style="position: relative; left: 20px;" [score]="employe.note" (scoreChange)="setPreferenceEmploye($event, employe.id)"></app-etoiles>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
-            
         </div>
-    </div>
-</section>
-<br>
-<app-footer></app-footer>
+    </section>
+    <br>
+    <app-footer></app-footer>
+</div>

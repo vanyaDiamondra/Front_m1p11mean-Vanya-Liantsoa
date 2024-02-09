@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/services/services.service';
+import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-servicesalon',
@@ -7,6 +8,7 @@ import { ServicesService } from 'src/app/services/services.service';
 })
 export class ServicesalonComponent implements OnInit {
 
+  chargementEnCours: boolean = true;
   servicesCategoriesList: any[] = [];
   servicesList: any[] = [];
 
@@ -22,6 +24,9 @@ export class ServicesalonComponent implements OnInit {
   ngOnInit(): void {
     this.getServiceCategories();
     this.getServices();
+    setTimeout(() => {
+      this.chargementEnCours = false;
+    }, 1000);
   }
 
   async getServiceCategories() {

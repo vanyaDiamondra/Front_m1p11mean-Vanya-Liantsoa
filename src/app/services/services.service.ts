@@ -27,7 +27,8 @@ export class ServicesService {
   }
 
   getServicesByID(id: string | undefined | null): Promise<any[]> {
-    return this.http.get<any[]>(this.baseurl + '/service/search?_id='+id).toPromise();
+    const token = window.localStorage.getItem('tokenuser');
+    return this.http.get<any[]>(this.baseurl + '/service/client?token='+token+'&_id='+id).toPromise();
   }
 
   searchByCategories(categorieID: String): Promise<any[]> {

@@ -1,0 +1,14 @@
+.etoiles-container {
+    display: inline-block;
+  }
+  
+  .etoile {
+    font-size: 1.5em;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .etoile.remplie {
+    color: #ffc107; /* Couleur pour les étoiles remplies */
+  }
+  

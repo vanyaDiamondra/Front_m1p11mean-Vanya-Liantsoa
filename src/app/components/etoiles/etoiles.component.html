@@ -1,0 +1,4 @@
+<div class="etoiles-container">
+    <span *ngFor="let etoile of etoilesArray" class="etoile" [class.remplie]="etoile <= score" (click)="onClickEtoile(etoile)">&#9733;</span>
+  </div>
+  
