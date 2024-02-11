@@ -33,12 +33,12 @@
                         <img src="assets/img/illustration/rdv.svg" style="width: 60%; display: block; margin: auto;">
                         <p style="text-align: center;"><b>Prendre rendez-vous</b></p><br>
                         <div class="form-group col-md-12">
-                            <label for="email" style="color: grey;">Date et heure</label>
-                            <input type="datetime-local" class="form-control" name="email" id="email" placeholder="Email">
+                            <label for="daterdv" style="color: grey;">Date et heure</label>
+                            <input type="datetime-local" [(ngModel)]="dateEtHeureRdv" class="form-control" name="daterdv" id="daterdv" placeholder="daterdv">
                         </div>
 
                         <div class="form-btn col-12">
-                            <button class="th-btn fw-btn">Prendre<i class="fa-solid fa-arrow-right ms-2"></i>
+                            <button class="th-btn fw-btn" (click)="prendreRdv()">Prendre<i class="fa-solid fa-arrow-right ms-2"></i>
                             </button>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                         <div class="col-xl-4" *ngFor="let employe of employeePreferee" >
                             <img [src]="employe.photo" style="border-radius: 50%; width: 60%; display: block; margin: 0 auto;">
                             <p style="text-align: center;">{{ employe.nom }} {{ employe.prenom }}</p>
-                            <app-etoiles style="position: relative; left: 20px;" [score]="employe.note" (scoreChange)="setPreferenceEmploye($event, employe.id)"></app-etoiles>
+                            <app-etoiles style="position: relative; left: 20px;" [score]="employe.note" (scoreChange)="setPreferenceEmploye($event, employe._id)"></app-etoiles>
                         </div>
                     </div>
                 </div>

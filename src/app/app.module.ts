@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +14,8 @@ import { RdvComponent } from './components/rdv/rdv.component';
 import { ServicesalonComponent } from './components/servicesalon/servicesalon.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { EtoilesComponent } from './components/etoiles/etoiles.component';
+import { PaiementComponent } from './components/paiement/paiement.component';
+import { HistoriqueComponent } from './components/historique/historique.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { EtoilesComponent } from './components/etoiles/etoiles.component';
     RdvComponent,
     ServicesalonComponent,
     LoaderComponent,
-    EtoilesComponent
+    EtoilesComponent,
+    PaiementComponent,
+    HistoriqueComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,6 @@ import { EtoilesComponent } from './components/etoiles/etoiles.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

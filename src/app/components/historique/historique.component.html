@@ -1,0 +1,50 @@
+<div *ngIf="chargementEnCours">
+    <app-loader></app-loader>
+</div>
+
+<div *ngIf="!chargementEnCours">
+    <app-header></app-header>
+        <div> 
+            <div class="row">
+                <div class="col-xl-12" >
+                    <div class="overflow-hidden">
+                        <div class="shape-mockup" data-top="0%" data-left="0%"><img src="assets/img/shape/flower_1_1.png" alt="shape">
+                        </div>
+                        <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-right="0%">
+                            <img  src="assets/img/shape/flower_1_2.png" alt="shape">
+                        </div>
+                
+                        <div class="container">
+                            <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-left="0%">
+                                <img src="assets/img/shape/service_shape2.png" style="position: relative; left: 200px;" alt="shape">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="title-area text-center"><span class="sub-title style2">Historique rendez-vous</span> <img
+                                src="assets/img/theme-img/title_shape_1.svg" alt="">
+                            </div>
+                            
+                            <div class="col-xl-2"></div>
+                            <div class="col-xl-10">
+                                <div class="row" *ngFor="let rdv of rdvList">
+                                    <div class="col-xl-3" style="text-align: left;">
+                                        <img [src] = "rdv.service.image" alt="Chargement..."  style="width: 100px; border-radius: 50%;">
+                                        <p><b>{{ rdv.service.nom }}</b></p>
+                                    </div>
+                                    <div class="col-xl-8">
+                                        <p>Client : {{ rdv.client.nom }} {{ rdv.client.prenom }}</p>
+                                        <p>Date : {{ getDateFromString(rdv.date) }} de {{ getTimeFromString(rdv.heure_debut) }} à  {{ getTimeFromString(rdv.heure_fin) }}</p>
+                                        <p>Avec : {{ rdv.employe.nom }} {{ rdv.employe.prenom }}</p>
+                                        <p>Payé : {{ getFormattedPrice(rdv.service.prix) }} Ar</p>
+                                    </div>
+                                    <hr class="class1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <app-footer></app-footer>
+</div>

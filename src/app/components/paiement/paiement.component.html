@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<div> 
+    <div class="row">
+        <div class="col-xl-1">
+            <div class="img1" data-right="0%"><img src="assets/img/shape/leaves_6.png"  alt="About"></div>
+            <div class="img1"><img src="assets/img/shape/flower_1_3.png" alt="About"></div>
+            <div class="img1"><img src="assets/img/shape/leaves_6.png" alt="About"></div>
+        </div>
+        <div class="col-xl-7">
+            <br>
+            <h4>Paiement </h4>
+            <p>Pour valider votre rendez-vous, procédez au paiement de service en cliquant sur Payer.</p>
+            <h5>Détails </h5>
+            <p><b>Service</b> : {{ rdv.service.nom }}</p>
+            <p><b>Date</b> : {{ getDateFromString(rdv.heure_debut) }}</p>
+            <p><b>Horaire</b> : {{getTimeFromString(rdv.heure_debut)}} - {{ getTimeFromString(rdv.heure_fin) }}</p>
+            <p><b>Tarif</b> : {{ getFormattedPrice(rdv.service.prix) }} Ar</p>
+            <div class="form-btn col-5">
+                <button class="th-btn fw-btn" (click) = "paiement()">Payer<i class="fa-solid fa-arrow-right ms-2"></i>
+                </button>
+            </div>
+        
+        </div>
+        <div class="col-xl-4">
+            <img src="assets/img/payment.svg" style="width: 60%; position: relative; top: 120px;">
+        </div>
+    </div>
+</div>
+<br><br>
+<app-footer></app-footer>
+

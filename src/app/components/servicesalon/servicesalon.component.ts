@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/services/services.service';
-import { AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-servicesalon',
@@ -19,14 +19,25 @@ export class ServicesalonComponent implements OnInit {
 
   searchElements = { keyWords: '', categorie: ''};
 
-  constructor(private servicesService: ServicesService) { }
+  constructor(private servicesService: ServicesService, private router: Router) { }
 
   ngOnInit(): void {
+    this.goAccueil();
     this.getServiceCategories();
     this.getServices();
     setTimeout(() => {
       this.chargementEnCours = false;
     }, 1000);
+     
+  }
+
+  goAccueil() {
+    const token = window.localStorage.getItem('tokenuser');
+   if( token == null ){
+    this.router.navigate(['/']);
+   } else{
+    this.router.navigate(['/accueil']);
+   }
   }
 
   async getServiceCategories() {

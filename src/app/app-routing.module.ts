@@ -5,13 +5,17 @@ import { AccueilComponent } from './components/accueil/accueil.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { RdvComponent } from './components/rdv/rdv.component';
 import { ServicesalonComponent } from './components/servicesalon/servicesalon.component';
+import { PaiementComponent } from './components/paiement/paiement.component';
+import { HistoriqueComponent } from './components/historique/historique.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'inscription', component: InscriptionComponent},
   {path: 'accueil', component: ServicesalonComponent},
+  {path: 'rdv', component: HistoriqueComponent},
   {path: 'rdv/:id', component: RdvComponent},
+  {path: 'paiement', component: PaiementComponent},
 ];
 
 @NgModule({

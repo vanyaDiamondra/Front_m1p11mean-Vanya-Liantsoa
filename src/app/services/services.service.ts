@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import {baseurl} from './routeconfig';
 
 @Injectable({
   providedIn: 'root'
@@ -10,29 +10,29 @@ import { Router } from '@angular/router';
 
 export class ServicesService {
 
-  baseurl = 'http://localhost:3000';
-
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   getServices(): Promise<any[]> {
-    return this.http.get<any[]>(this.baseurl + '/service').toPromise();
+    return this.http.get<any[]>(baseurl + '/service').toPromise();
   }
 
   getServicesCategories(): Promise<any[]> {
-    return this.http.get<any[]>(this.baseurl + '/service/categories').toPromise();
+    return this.http.get<any[]>(baseurl + '/service/categories').toPromise();
   }
 
   searchServices(nom: String): Promise<any[]> {
-    return this.http.get<any[]>(this.baseurl + '/service/search?nom='+nom).toPromise();
+    return this.http.get<any[]>(baseurl + '/service/search?nom='+nom).toPromise();
   }
 
   getServicesByID(id: string | undefined | null): Promise<any[]> {
     const token = window.localStorage.getItem('tokenuser');
-    return this.http.get<any[]>(this.baseurl + '/service/client?token='+token+'&_id='+id).toPromise();
+    return this.http.get<any[]>(baseurl + '/service/client?token='+token+'&_id='+id).toPromise();
   }
 
   searchByCategories(categorieID: String): Promise<any[]> {
-    return this.http.get<any[]>(this.baseurl + '/service/search?categorieID='+categorieID).toPromise();
+    return this.http.get<any[]>(baseurl + '/service/search?categorieID='+categorieID).toPromise();
   }
+
+
 
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import {baseurl} from './routeconfig';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,9 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   userToken = window.localStorage.getItem('usertoken');
-  baseurl = 'http://localhost:3000';
-
 
   login(user: any): Observable<any> {
-    return this.http.post(this.baseurl+'/user/login', user);
+    return this.http.post(baseurl+'/user/login', user);
   }
 
   constructor(private http: HttpClient, private router: Router) { }

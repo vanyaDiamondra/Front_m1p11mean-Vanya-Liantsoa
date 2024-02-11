@@ -163,14 +163,13 @@
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
-                                    <li><a [routerLink]="['/']">Accueil</a></li>
-                                    <li><a href="#service-sec">Services</a></li>
+                                    <li><a (click) = "goAccueil()">Accueil</a></li>
                                     <li><a href="#contact-sec">A propos</a></li>
                                     <li class="menu-item-has-children"><a href="index.html">Mon compte</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item-has-children"><a href="#">Rendez-vous</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="home-nail-stylist.html">Historique </a></li>
+                                                    <li><a [routerLink]="['/rdv']">Historique </a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Préférences</a>
