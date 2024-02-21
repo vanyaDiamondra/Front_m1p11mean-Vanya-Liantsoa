@@ -16,6 +16,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { EtoilesComponent } from './components/etoiles/etoiles.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
+import {EmailVerifyComponent} from './components/emailverify/emailverify.component'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HistoriqueComponent } from './components/historique/historique.componen
     EtoilesComponent,
     PaiementComponent,
     HistoriqueComponent,
+    EmailVerifyComponent
   ],
   imports: [
     BrowserModule,

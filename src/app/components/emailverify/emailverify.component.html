@@ -1,0 +1,25 @@
+
+<div class="">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <h4>Confirmation d'inscription</h4>
+              <p>Veuillez-vous connecter pour bénéficier de nos services en ligne</p>
+
+            <div class="feedback">
+                <div *ngIf="valideUrl; else notFound">
+                  <p style="color: green;">Email verified successfully <i class="fa-sharp fa-regular fa-warning"></i> </p>
+                  <button class="green_btn" (click)="goToLogin()">Se connecter</button>
+                </div>
+
+            </div>
+
+            <ng-template #notFound>
+              <p style="color: tomato;">404 not found <i class="fa-sharp fa-regular fa-warning"></i> </p>
+            </ng-template>
+
+
+          </div>
+        </div>
+  </div>
+</div>

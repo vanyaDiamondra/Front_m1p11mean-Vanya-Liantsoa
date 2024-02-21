@@ -26,5 +26,10 @@ export class UserService {
       this.router.navigate(['/']);
     }
   }
+  inscription(user: any):Observable<any> {
+    return this.http.post(baseurl+'/user/inscription', user);
+  }
+
+  
 
 }
