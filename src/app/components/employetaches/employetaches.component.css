@@ -1,0 +1,22 @@
+.todo {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: tomato;
+    padding-top: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.done {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: #B6FF00;
+    padding-top: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.summ {
+    font-weight: bolder;
+    background-color: #d8ffce;
+}

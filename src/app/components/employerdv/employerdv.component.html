@@ -1,0 +1,80 @@
+<div *ngIf="chargementEnCours">
+    <app-loader></app-loader>
+</div>
+
+<div *ngIf="!chargementEnCours">
+    <app-employesidebar></app-employesidebar>
+        <div> 
+            <div class="row">
+                <div class="col-xl-12" >
+                    <div class="overflow-hidden">
+                        <div class="shape-mockup" data-top="0%" data-left="0%"><img src="assets/img/shape/flower_1_1.png" alt="shape">
+                        </div>
+                        <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-right="0%">
+                            <img  src="assets/img/shape/flower_1_2.png" alt="shape">
+                        </div>
+                
+                        <div class="container">
+                            <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-left="0%">
+                                <img src="assets/img/shape/service_shape2.png" style="position: relative; left: 200px;" alt="shape">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="title-area text-center"><span class="sub-title style2">Vos rendez-vous</span> <img
+                                src="assets/img/theme-img/title_shape_1.svg" alt="">
+                            </div>
+                            
+                            <div class="col-xl-4">
+                                <div class="widget widget_search">
+                                    <form class="search-form">
+                                        <select [(ngModel)]="filterCriteria" name="filterCriteria" (change)="filterRdv()">
+                                            <option value="0">-- Mois --</option>
+                                            <option *ngFor="let month of months" [value]="month.value">{{ month.label }}</option>
+                                        </select>
+                                        <button type="submit"><i class="far fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xl-8">
+                                <div class="row" *ngFor="let rdv of rdvList">
+                                    <div class="col-xl-3" style="text-align: left;">
+                                        <img [src] = "rdv.service.image" alt="Chargement..."  style="width: 100px; border-radius: 50%;">
+                                        <p><b>{{ rdv.service.nom }}</b></p>
+                                    </div>
+                                    <div class="col-xl-8">
+                                        <p>Client : {{ rdv.client.nom }} {{ rdv.client.prenom }}</p>
+                                        <p>Date : {{ getDateFromString(rdv.date) }} de {{ getTimeFromString(rdv.heure_debut) }}h à  {{ getTimeFromString(rdv.heure_fin) }}h</p>
+                                        <p>Payé : {{ getFormattedPrice(rdv.service.prix) }} Ar  &nbsp; 
+                                             <span *ngIf="rdv.status === 0; else done">
+                                                <span style="text-align: center; color: white; display: block; background-color: green; width: 150px;"> Status : Effectuée </span>
+                                             </span>
+                                            <ng-template #done>
+                                                <span style="text-align: center; color: white; display: block; background-color: tomato; width: 150px;"> Status : A venir </span>
+                                            </ng-template>
+                                        </p>
+                                    </div>
+                                    <hr class="class1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <p class="copyright-text text-white">Rakotoarisoa Miaingo Diamondra Vanya </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="copyright-text text-white">Rakotonirina Liantsoa</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="copyright-text text-white">&copy; m1p11mean-Vanya-Liantsoa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

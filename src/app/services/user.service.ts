@@ -11,20 +11,14 @@ import {baseurl} from './routeconfig';
 
 export class UserService {
 
-  userToken = window.localStorage.getItem('usertoken');
-
   login(user: any): Observable<any> {
     return this.http.post(baseurl+'/user/login', user);
   }
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  seeProfil(): any {
-    if( this.userToken != null ){
-      this.router.navigate(['/accueil']);
-    } else {
-      this.router.navigate(['/']);
-    }
+  seeProfil(token: string | null): Promise<any[]> {
+    return this.http.get<any[]>(baseurl + '/token?token='+token).toPromise();
   }
   inscription(user: any):Observable<any> {
     return this.http.post(baseurl+'/user/inscription', user);

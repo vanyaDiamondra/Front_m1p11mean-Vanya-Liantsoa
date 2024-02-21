@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,9 @@ import { EtoilesComponent } from './components/etoiles/etoiles.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
 import {EmailVerifyComponent} from './components/emailverify/emailverify.component'
+import { EmployerdvComponent } from './components/employerdv/employerdv.component';
+import { EmployesidebarComponent } from './components/employesidebar/employesidebar.component';
+import { EmployetachesComponent } from './components/employetaches/employetaches.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import {EmailVerifyComponent} from './components/emailverify/emailverify.compone
     EtoilesComponent,
     PaiementComponent,
     HistoriqueComponent,
-    EmailVerifyComponent
+    EmailVerifyComponent,
+    EmployerdvComponent,
+    EmployesidebarComponent,
+    EmployetachesComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +47,7 @@ import {EmailVerifyComponent} from './components/emailverify/emailverify.compone
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

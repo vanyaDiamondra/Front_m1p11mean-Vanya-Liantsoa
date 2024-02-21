@@ -15,22 +15,11 @@ export class AccueilComponent implements OnInit {
   constructor(private servicesService: ServicesService, private router: Router) { }
 
   ngOnInit(): void {
-    this.goAccueil();
     this.getServiceCategories();
   }
 
   async getServiceCategories() {
       this.servicesCategoriesList = await this.servicesService.getServicesCategories();
   }
-
-  goAccueil() {
-    const token = window.localStorage.getItem('tokenuser');
-   if( token == null ){
-    this.router.navigate(['/']);
-   } else{
-    this.router.navigate(['/accueil']);
-   }
-  }
-
 
 }

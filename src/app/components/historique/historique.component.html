@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="col-xl-8">
                                         <p>Client : {{ rdv.client.nom }} {{ rdv.client.prenom }}</p>
-                                        <p>Date : {{ getDateFromString(rdv.date) }} de {{ getTimeFromString(rdv.heure_debut) }} à  {{ getTimeFromString(rdv.heure_fin) }}</p>
+                                        <p>Date : {{ getDateFromString(rdv.date) }} de {{ getTimeFromString(rdv.heure_debut) }}h à  {{ getTimeFromString(rdv.heure_fin) }}h</p>
                                         <p>Avec : {{ rdv.employe.nom }} {{ rdv.employe.prenom }}</p>
                                         <p>Payé : {{ getFormattedPrice(rdv.service.prix) }} Ar</p>
                                     </div>
