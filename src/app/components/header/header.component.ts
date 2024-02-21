@@ -32,5 +32,14 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/accueil']);
    }
   }
+<<<<<<< Updated upstream
+=======
+  logout() {
+
+    localStorage.removeItem('tokenuser');
+    this.router.navigate(['/']);
+  }
+
+>>>>>>> Stashed changes
 
 }
