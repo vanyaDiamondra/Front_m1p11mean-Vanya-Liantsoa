@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
         //   confirmButtonColor: '#FFB0B0',
         // }).then((result) => {});
 
-        this.router.navigate(['/']);
+     //   this.router.navigate(['/']);
       }
     } catch (error) {
       console.error('Erreur lors de la récupération du profil :', error);
