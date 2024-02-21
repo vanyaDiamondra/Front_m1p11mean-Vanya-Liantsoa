@@ -1,0 +1,121 @@
+{
+        "nom": "Andria",
+        "prenom": "Lili",
+        "contact": "034 01 087 18",
+        "email": "liliandrianaivomamonjisoa@gmail.com",
+        "sexe": "Femme",
+        "date_naissance": "1991-01-03",
+        "mdp": "lili",
+        "type": 1,
+        "photo":""
+    },
+    {
+        "nom":"Beards",
+        "prenom":"Betti",
+        "contact":"033 21 157 12",
+        "email":"bbeards0@gmail.com",
+        "sexe":"Homme",
+        "date_naissance":"1993-05-08",
+        "mdp":"xF7SJL6&K9y",
+        "type": 1,
+        "photo":""
+    },
+    {
+        "nom":"Pochon",
+        "prenom":"Caleb",
+        "contact":"034 01 087 20",
+        "email":"cpochon1@gmail.com",
+        "sexe":"Homme",
+        "date_naissance":"1996-05-05",
+        "mdp":"nM8vcJn5cg",
+        "type": 1,
+        "photo":""
+    },
+    {
+        "nom":"Chown",
+        "prenom":"Sunshine",
+        "contact":"033 01 087 18",
+        "email":"schownj@gmail.com",
+        "sexe":"Femme",
+        "date_naissance":"1992-01-23",
+        "mdp":"hR3qa3fY",
+        "type": 1,
+        "photo":""
+    },
+    {
+        "nom":"De Nisco",
+        "prenom":"Micheline",
+        "contact":"032 01 087 18",
+        "email":"mdeniscoi@gmail.com",
+        "sexe":"Femme",
+        "date_naissance":"1996-02-10",
+        "mdp":"Micheline",
+        "type": 1,
+        "photo":""
+    },
+    {
+        "nom": "Gandrich",
+        "prenom": "Alessandro",
+        "contact": "034 01 128 18",
+        "email": "agandrich5@gmail.com",
+        "sexe": "Homme",
+        "date_naissance": "1992-01-23",
+        "mdp": "nB6Fjper",
+        "type": 2,
+        "photo":""
+    },
+    {
+        "nom": "Georgeou",
+        "prenom": "Engracia",
+        "contact": "032 11 087 18",
+        "email": "egeorgeou8@gmail.com",
+        "sexe": "Femme",
+        "date_naissance": "1996-12-22",
+        "mdp": "tY64qR8wmG",
+        "type": 2,
+        "photo":""
+    },
+    {
+        "nom": "Ennals",
+        "prenom": "Arlee",
+        "contact": "033 22 087 18",
+        "email": "aennalsb@gmail.com",
+        "sexe": "Femme",
+        "date_naissance": "1991-01-23",
+        "mdp": "eO5pdITHMTy",
+        "type": 2,
+        "photo":""
+    },
+    {
+        "nom": "Doget",
+        "prenom": "Una",
+        "contact": "032 61 162 18",
+        "email": "udogetd@gmail.com",
+        "sexe": "Femme",
+        "date_naissance": "1996-02-02",
+        "mdp": "pQ4lVlL",
+        "type": 2,
+        "photo":""
+    },
+    {
+        "nom": "Beirne",
+        "prenom": "Em",
+        "contact": "032 15 333 33",
+        "email": "ebeirnee@gmail.com",
+        "sexe": "Homme",
+        "date_naissance": "1994-05-03",
+        "mdp": "pA2MkzQ5",
+        "type": 2,
+        "photo":""
+    },
+    {
+        "nom": "Robertacci",
+        "prenom": "Shaylynn",
+        "contact": "033 15 256 36",
+        "email": "srobertaccig@gmail.com",
+        "sexe": "Femme",
+        "date_naissance": "1990-11-13",
+        "mdp": "eO9Z0zWUISoQ",
+        "type": 3,
+        "photo":""
+    }

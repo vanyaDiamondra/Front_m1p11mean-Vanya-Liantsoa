@@ -7,6 +7,8 @@ import { RdvComponent } from './components/rdv/rdv.component';
 import { ServicesalonComponent } from './components/servicesalon/servicesalon.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
+import { EmployerdvComponent } from './components/employerdv/employerdv.component';
+import { EmployetachesComponent } from './components/employetaches/employetaches.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path: 'rdv', component: HistoriqueComponent},
   {path: 'rdv/:id', component: RdvComponent},
   {path: 'paiement', component: PaiementComponent},
+  {path: 'employe', component: EmployerdvComponent},
+  {path: 'employe/tasks', component: EmployetachesComponent},
 ];
 
 @NgModule({
