@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   userToken = window.localStorage.getItem('tokenuser');
   clickNotif = false;
+  clickProfil = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -18,6 +19,9 @@ export class HeaderComponent implements OnInit {
 
   toggleNotif() {
     this.clickNotif = !this.clickNotif;
+  }
+  toggleProfil() {
+    this.clickProfil = !this.clickProfil;
   }
 
   seeProfil() {
@@ -32,5 +36,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/accueil']);
    }
   }
+  logout() {
+
+    localStorage.removeItem('tokenuser');
+    this.router.navigate(['/login']);
+  }
+
 
 }

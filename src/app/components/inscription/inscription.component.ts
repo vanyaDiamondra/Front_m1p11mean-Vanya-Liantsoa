@@ -30,7 +30,7 @@ export class InscriptionComponent implements OnInit {
       error => {
         console.error('Error:', error.error);
         this.feedBack.message=error.error.message;
-        this.router.navigate(['/']);
+        this.router.navigate(['/inscription']);
 
       }
     );
