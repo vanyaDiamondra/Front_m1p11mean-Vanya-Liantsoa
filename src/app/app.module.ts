@@ -16,7 +16,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { EtoilesComponent } from './components/etoiles/etoiles.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
-import {EmailVerifyComponent} from './components/emailverify/emailverify.component'
+import {EmailVerifyComponent} from './components/emailverify/emailverify.component';
+import {NotificationListComponent} from './components/notification/notification-list.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {EmailVerifyComponent} from './components/emailverify/emailverify.compone
     EtoilesComponent,
     PaiementComponent,
     HistoriqueComponent,
-    EmailVerifyComponent
+    EmailVerifyComponent,
+    NotificationListComponent
   ],
   imports: [
     BrowserModule,

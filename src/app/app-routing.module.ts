@@ -7,7 +7,8 @@ import { RdvComponent } from './components/rdv/rdv.component';
 import { ServicesalonComponent } from './components/servicesalon/servicesalon.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
-import {EmailVerifyComponent} from './components/emailverify/emailverify.component'
+import {EmailVerifyComponent} from './components/emailverify/emailverify.component';
+import {NotificationListComponent} from './components/notification/notification-list.component'
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'rdv', component: HistoriqueComponent},
   {path: 'rdv/:id', component: RdvComponent},
   {path: 'paiement', component: PaiementComponent},
-  {path: ':id/verify/:token', component: EmailVerifyComponent}
+  {path: ':id/verify/:token', component: EmailVerifyComponent},
+  {path: 'notif', component: NotificationListComponent}
 ];
 
 @NgModule({
