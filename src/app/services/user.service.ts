@@ -22,6 +22,7 @@ export class UserService {
   seeProfil(): any {
     if( this.userToken != null ){
       this.router.navigate(['/accueil']);
+      window.localStorage.setItem('usertoken',this.userToken);
     } else {
       this.router.navigate(['/']);
     }
@@ -30,6 +31,6 @@ export class UserService {
     return this.http.post(baseurl+'/user/inscription', user);
   }
 
-  
+
 
 }

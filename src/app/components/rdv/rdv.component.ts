@@ -19,7 +19,7 @@ export class RdvComponent implements OnInit {
 
   dateEtHeureRdv: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private servicesService: ServicesService, private rdvService: RdvService) 
+  constructor(private route: ActivatedRoute, private router: Router, private servicesService: ServicesService, private rdvService: RdvService)
   { }
 
   ngOnInit(): void {
@@ -45,10 +45,10 @@ export class RdvComponent implements OnInit {
         width: '600px',
         confirmButtonText: 'Ok',
         confirmButtonColor: '#FFB0B0',
-        
+
       }).then((result) => {});
-    } 
-    
+    }
+
     else{
       const htmlMessage = '<div style="text-align: left; padding: 2px;">'+
       '<p><b>Service</b> : '+ rdv.service.nom + '</p>' +
@@ -66,7 +66,7 @@ export class RdvComponent implements OnInit {
         confirmButtonText: 'Valider',
         cancelButtonText: 'Annuler',
         confirmButtonColor: '#FFB0B0',
-        
+
       }).then((result) => {
         if (result.isConfirmed) {
           this.fonctionOK(rdv);

@@ -36,26 +36,7 @@ export class InscriptionComponent implements OnInit {
     );
 
 
-    // if( this.feedBack.status === "200" ){
-    //   window.localStorage.setItem('tokenuser', this.feedBack.token);
-    //   this.router.navigate(['/home']);
-    // };
-    // this.userService.login(this.user).subscribe(
-    //   response => {
-    //     console.log('Server Response:', response);
-    //     this.feedBack = response;
-    //     if( this.feedBack.status === "200" ){
-    //       window.localStorage.setItem('tokenuser', this.feedBack.token);
-    //       this.router.navigate(['/accueil']);
-    //     }
-    //   },
-    //   error => {
-    //     console.error('Error:', error.error);
-    //     this.feedBack.message=error.error.message;
-    //     this.router.navigate(['/']);
 
-    //   }
-    // );
 
   }
 

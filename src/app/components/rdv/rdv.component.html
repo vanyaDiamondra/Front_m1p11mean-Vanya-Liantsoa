@@ -21,7 +21,7 @@
                                 <li><i class="far fa-clock"></i><a>{{ services.duree }} Min</a></li>
                             </ul>
                             <ul>
-                                <li><b>Préférences</b> : <app-etoiles [score]="preferenceService"></app-etoiles></li>
+                                <li><b>Préférences</b> : <app-etoiles [score]="preferenceService" [type]=0 [id]="services._id"></app-etoiles></li>
                             </ul>
                         </div>
                     </div><br>
@@ -51,11 +51,11 @@
                         <div class="col-xl-4" *ngFor="let employe of employeePreferee" >
                             <img [src]="employe.photo" style="border-radius: 50%; width: 60%; display: block; margin: 0 auto;">
                             <p style="text-align: center;">{{ employe.nom }} {{ employe.prenom }}</p>
-                            <app-etoiles style="position: relative; left: 20px;" [score]="employe.note" (scoreChange)="setPreferenceEmploye($event, employe._id)"></app-etoiles>
+                            <app-etoiles style="position: relative; left: 20px;" [score]="employe.note" [type]=1 [id]="employe._id" (scoreChange)="setPreferenceEmploye($event, employe._id)"></app-etoiles>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
