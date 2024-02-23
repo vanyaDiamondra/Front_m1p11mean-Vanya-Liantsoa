@@ -19,6 +19,9 @@ export class PreferenceService {
   noterEmp(data: any,id:string):Observable<any> {
     return this.http.post(baseurl+'/service/ajoutprefemp/'+id, data);
   }
+  getPrefNote(serviceid: String| undefined | null): Promise<number> {
+    return this.http.get<number>(baseurl + '/service/getprefnote/'+serviceid).toPromise();
+  }
 
 }
 

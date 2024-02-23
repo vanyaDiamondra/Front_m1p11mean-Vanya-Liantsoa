@@ -8,7 +8,8 @@ import { ServicesalonComponent } from './components/servicesalon/servicesalon.co
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
 import {EmailVerifyComponent} from './components/emailverify/emailverify.component';
-import {NotificationListComponent} from './components/notification/notification-list.component'
+import {NotificationListComponent} from './components/notification/notification-list.component';
+import {PreferrenceComponent} from './components/preferrence/preferrence.component'
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'rdv/:id', component: RdvComponent},
   {path: 'paiement', component: PaiementComponent},
   {path: ':id/verify/:token', component: EmailVerifyComponent},
-  {path: 'notif', component: NotificationListComponent}
+  {path: 'notif', component: NotificationListComponent},
+  {path: 'preferrence', component: PreferrenceComponent}
 ];
 
 @NgModule({

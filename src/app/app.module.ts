@@ -17,7 +17,8 @@ import { EtoilesComponent } from './components/etoiles/etoiles.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
 import {EmailVerifyComponent} from './components/emailverify/emailverify.component';
-import {NotificationListComponent} from './components/notification/notification-list.component'
+import {NotificationListComponent} from './components/notification/notification-list.component';
+import {PreferrenceComponent} from './components/preferrence/preferrence.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {NotificationListComponent} from './components/notification/notification-
     PaiementComponent,
     HistoriqueComponent,
     EmailVerifyComponent,
-    NotificationListComponent
+    NotificationListComponent,
+    PreferrenceComponent
   ],
   imports: [
     BrowserModule,
