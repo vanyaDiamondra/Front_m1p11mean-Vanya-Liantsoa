@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class NotificationListComponent implements OnInit, OnDestroy {
   notifications: any[] = [];
   eventSource: EventSource | undefined;
+  clickNotif = false;
 
   constructor(private http: HttpClient, private router: Router,private ngZone: NgZone) { }
 
@@ -17,7 +18,7 @@ export class NotificationListComponent implements OnInit, OnDestroy {
     this.eventSource = new EventSource('http://localhost:3000/notifications/stream');
     this.eventSource.onmessage = event => {
       const notification = JSON.parse(event.data);
-      this.ngZone.run(() => { 
+      this.ngZone.run(() => {
         this.notifications.push(notification);
         console.log(this.notifications);
       });
@@ -28,6 +29,9 @@ export class NotificationListComponent implements OnInit, OnDestroy {
     if (this.eventSource) {
       this.eventSource.close();
     }
+  }
+  toggleNotif() {
+    this.clickNotif = !this.clickNotif;
   }
 
   navigateToPost(offreId: string): void {
