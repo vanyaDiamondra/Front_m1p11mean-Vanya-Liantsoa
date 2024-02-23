@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/services/services.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RdvService } from 'src/app/services/rdv.service';
+import { PreferenceService } from 'src/app/services/preference.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,7 +20,7 @@ export class RdvComponent implements OnInit {
 
   dateEtHeureRdv: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private servicesService: ServicesService, private rdvService: RdvService) 
+  constructor(private route: ActivatedRoute, private router: Router, private servicesService: ServicesService, private rdvService: RdvService, private prefService:PreferenceService)
   { }
 
   ngOnInit(): void {
@@ -28,6 +29,7 @@ export class RdvComponent implements OnInit {
     setTimeout(() => {
       this.chargementEnCours = false;
     }, 600);
+
   }
 
   afficherAlerte(feedBackRdv: any) {
@@ -45,10 +47,10 @@ export class RdvComponent implements OnInit {
         width: '600px',
         confirmButtonText: 'Ok',
         confirmButtonColor: '#FFB0B0',
-        
+
       }).then((result) => {});
-    } 
-    
+    }
+
     else{
       const htmlMessage = '<div style="text-align: left; padding: 2px;">'+
       '<p><b>Service</b> : '+ rdv.service.nom + '</p>' +
@@ -66,7 +68,7 @@ export class RdvComponent implements OnInit {
         confirmButtonText: 'Valider',
         cancelButtonText: 'Annuler',
         confirmButtonColor: '#FFB0B0',
-        
+
       }).then((result) => {
         if (result.isConfirmed) {
           this.fonctionOK(rdv);
@@ -84,6 +86,7 @@ export class RdvComponent implements OnInit {
   async getServiceByID(id: string | undefined | null) {
       this.services = await this.servicesService.getServicesByID(id);
       this.employeePreferee = await this.services.employePreferee;
+      this.preferenceService= await this.prefService.getPrefNote(id)
   }
 
   async prendreRdv() {
@@ -102,7 +105,7 @@ export class RdvComponent implements OnInit {
 
   setPreferenceEmploye(nouveauScore: number, employeId: string): void {
     const nouveauxScores = this.employeePreferee.map(employe => {
-      if (employe.id === employeId) {
+      if (employe._id === employeId) {
         return { ...employe, note: nouveauScore };
       }
       return employe;
@@ -116,6 +119,11 @@ export class RdvComponent implements OnInit {
 
   getTimeFromString(dateObj: string){
     return dateObj.split('T')[1].substring(0, 5);
+  }
+
+  async getPreferred(id: string | undefined | null) {
+    this.services = await this.servicesService.getServicesByID(id);
+    this.employeePreferee = await this.services.employePreferee;
   }
 
 }

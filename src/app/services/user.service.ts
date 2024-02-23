@@ -24,6 +24,6 @@ export class UserService {
     return this.http.post(baseurl+'/user/inscription', user);
   }
 
-  
+
 
 }

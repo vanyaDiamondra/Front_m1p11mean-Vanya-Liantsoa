@@ -33,6 +33,11 @@ export class ServicesService {
     return this.http.get<any[]>(baseurl + '/service/search?categorieID='+categorieID).toPromise();
   }
 
+  getPrefServices():Promise<any[]> {
+    const token = window.localStorage.getItem('tokenuser');
+    return this.http.get<any[]>(baseurl + '/service/prefService?token='+token).toPromise();
+  }
+
 
 
 }

@@ -10,6 +10,8 @@ import { HistoriqueComponent } from './components/historique/historique.componen
 import {EmailVerifyComponent} from './components/emailverify/emailverify.component'
 import { EmployerdvComponent } from './components/employerdv/employerdv.component';
 import { EmployetachesComponent } from './components/employetaches/employetaches.component';
+import {NotificationListComponent} from './components/notification/notification-list.component';
+import {PreferrenceComponent} from './components/preferrence/preferrence.component'
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: ':id/verify/:token', component: EmailVerifyComponent},
   {path: 'employe', component: EmployerdvComponent},
   {path: 'employe/tasks', component: EmployetachesComponent},
+  {path: 'notif', component: NotificationListComponent},
+  {path: 'preferrence', component: PreferrenceComponent}
 ];
 
 @NgModule({

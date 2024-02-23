@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
- 
+
 
     <header class="th-header header-layout1 onepage-nav">
         <div class="header-top">
@@ -72,8 +72,7 @@
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Préférences</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="index-onepage.html">Choisir</a></li>
-                                                    <li><a href="index-2-onepage.html">Consulter</a></li>
+                                                    <li><a [routerLink]="['/preferrence']">Liste</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -84,21 +83,16 @@
                         </div>
                         <div class="col-auto d-none d-xl-block">
                             <div class="header-button" >
+                                <button type="button" class="icon-btn searchBoxToggler"><i class="fa-light fa-cart-shopping"></i></button>
                                 <a (click)="toggleNotif()" class="menu-item-has-children" class="icon-btn sideMenuToggler2">
                                     <i class="fa-light fa-bell"></i> <span class="badge" >5</span>
                                     <div class="col-md-12 col-lg-12 col-xl-12" class="sub-menu" *ngIf="clickNotif">
                                         <div class="widget woocommerce widget_shopping_cart" style="width: 300px; position: relative; right: 200px; background-color: white;">
                                             <h5 class="widget_title">Notifications</h5>
-                                            <div class="widget_shopping_cart_content">
-                                                <ul class="woocommerce-mini-cart cart_list product_list_widget">
-                                                    <li>
-                                                        <p href="#">Notif 1</p>
-                                                    </li><hr class="style1">
-                                                    <li>
-                                                        <p href="#">Notif 2</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <app-notification-list>
+
+                                            </app-notification-list>
+
                                         </div>
                                     </div>
                                 </a>

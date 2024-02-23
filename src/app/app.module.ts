@@ -21,6 +21,8 @@ import {EmailVerifyComponent} from './components/emailverify/emailverify.compone
 import { EmployerdvComponent } from './components/employerdv/employerdv.component';
 import { EmployesidebarComponent } from './components/employesidebar/employesidebar.component';
 import { EmployetachesComponent } from './components/employetaches/employetaches.component';
+import {NotificationListComponent} from './components/notification/notification-list.component';
+import {PreferrenceComponent} from './components/preferrence/preferrence.component'
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { EmployetachesComponent } from './components/employetaches/employetaches
     EmployerdvComponent,
     EmployesidebarComponent,
     EmployetachesComponent,
+    NotificationListComponent,
+    PreferrenceComponent
   ],
   imports: [
     BrowserModule,
