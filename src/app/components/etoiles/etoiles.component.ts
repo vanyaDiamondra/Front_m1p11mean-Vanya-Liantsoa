@@ -27,7 +27,7 @@ export class EtoilesComponent {
     //const storage=window.localStorage.getItem('usertoken');
     console.log(window.localStorage.getItem('tokenuser'));
 
-    this.data.token=window.localStorage.getItem('tokenuser')||'tsis';
+    this.data.token=window.localStorage.getItem('tokenuser')||'';
     this.data.note=nouveauScore;
     if (this.type === 0) {
       this.preferenceService.noterService(this.data,this.id).subscribe(

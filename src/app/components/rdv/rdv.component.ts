@@ -86,7 +86,7 @@ export class RdvComponent implements OnInit {
   async getServiceByID(id: string | undefined | null) {
       this.services = await this.servicesService.getServicesByID(id);
       this.employeePreferee = await this.services.employePreferee;
-      this.preferenceService= await this.prefService.getPrefNote(id);
+      this.preferenceService= await this.prefService.getPrefNote(id)
   }
 
   async prendreRdv() {

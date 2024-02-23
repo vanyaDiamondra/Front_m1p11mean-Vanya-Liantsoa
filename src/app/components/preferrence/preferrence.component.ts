@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class PreferrenceComponent implements OnInit {
 
   chargementEnCours: boolean = true;
-  servicesCategoriesList: any[] = [];
   servicesList: any[] = [];
 
   donneesAffichees: any[] = [];
@@ -17,13 +16,12 @@ export class PreferrenceComponent implements OnInit {
   pageActuelle: number = 1;
   pageTotal: number = 0;
 
-  searchElements = { keyWords: '', categorie: ''};
 
   constructor(private servicesService: ServicesService, private router: Router) { }
 
   ngOnInit(): void {
     this.goAccueil();
-    this.getServiceCategories();
+
     this.getServices();
     setTimeout(() => {
       this.chargementEnCours = false;
@@ -40,9 +38,7 @@ export class PreferrenceComponent implements OnInit {
    }
   }
 
-  async getServiceCategories() {
-    this.servicesCategoriesList = await this.servicesService.getServicesCategories();
-  }
+
 
   async getServices() {
     this.servicesList = await this.servicesService.getPrefServices();
@@ -51,17 +47,9 @@ export class PreferrenceComponent implements OnInit {
 
   }
 
-  async searchKeyWords() {
-    this.servicesList = await this.servicesService.searchServices(this.searchElements.keyWords);
-    this.donneesAffichees = this.getPageSlice(this.servicesList, this.pageActuelle);
-    this.pageTotal = Math.ceil(this.servicesList.length / this.taillePage);
-  }
 
-  async searchByCategories(categorieID: String) {
-    this.servicesList = await this.servicesService.searchByCategories(categorieID);
-    this.donneesAffichees = this.getPageSlice(this.servicesList, this.pageActuelle);
-    this.pageTotal = Math.ceil(this.servicesList.length / this.taillePage);
-  }
+
+
 
 
   getPageSlice(data: any[], page: number): any[] {
