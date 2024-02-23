@@ -59,17 +59,13 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/accueil']);
    }
   }
+
   logout() {
 
     localStorage.removeItem('tokenuser');
     this.router.navigate(['/']);
   }
 
-
-  logout() {
-    localStorage.removeItem('tokenuser');
-    this.router.navigate(['/']);
-  }
 
 
 }
