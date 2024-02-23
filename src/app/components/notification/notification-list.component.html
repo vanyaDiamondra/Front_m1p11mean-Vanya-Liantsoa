@@ -1,3 +1,8 @@
+<a (click)="toggleNotif()" class="menu-item-has-children" class="icon-btn sideMenuToggler2">
+<i class="fa-light fa-bell"></i> <span class="badge" >{{notifications.length}}</span>
+<div class="col-md-12 col-lg-12 col-xl-12" class="sub-menu" *ngIf="clickNotif">
+    <div class="widget woocommerce widget_shopping_cart" style="width: 300px; position: relative; right: 200px; background-color: white;">
+        <h5 class="widget_title">Notifications</h5>
 <div class="widget_shopping_cart_content">
   <ul class="woocommerce-mini-cart cart_list product_list_widget"  *ngFor="let notification of notifications.reverse()">
       <li>
@@ -5,6 +10,9 @@
       </li><hr class="style1">
   </ul>
 </div>
+</div>
+</div>
+</a>
 
 
 

@@ -186,18 +186,12 @@
                         <div class="col-auto d-none d-xl-block">
                             <div class="header-button" >
                                 <button type="button" class="icon-btn searchBoxToggler"><i class="fa-light fa-cart-shopping"></i></button>
-                                <a (click)="toggleNotif()" class="menu-item-has-children" class="icon-btn sideMenuToggler2">
-                                    <i class="fa-light fa-bell"></i> <span class="badge" >5</span>
-                                    <div class="col-md-12 col-lg-12 col-xl-12" class="sub-menu" *ngIf="clickNotif">
-                                        <div class="widget woocommerce widget_shopping_cart" style="width: 300px; position: relative; right: 200px; background-color: white;">
-                                            <h5 class="widget_title">Notifications</h5>
+                               
                                             <app-notification-list>
 
                                             </app-notification-list>
 
-                                        </div>
-                                    </div>
-                                </a>
+
                                 <a (click) = "seeProfil()" class="icon-btn sideMenuToggler">
                                     <i class="fa-light fa-user"></i>
                                 </a>
