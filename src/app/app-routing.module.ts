@@ -9,7 +9,9 @@ import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
 import {EmailVerifyComponent} from './components/emailverify/emailverify.component';
 import {NotificationListComponent} from './components/notification/notification-list.component';
-import {PreferrenceComponent} from './components/preferrence/preferrence.component'
+import {PreferrenceComponent} from './components/preferrence/preferrence.component';
+import {ProfilComponent} from './components/profil/profil.component';
+import {UpdateComponent} from './components/updatepic/updatepic.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path: 'paiement', component: PaiementComponent},
   {path: ':id/verify/:token', component: EmailVerifyComponent},
   {path: 'notif', component: NotificationListComponent},
-  {path: 'preferrence', component: PreferrenceComponent}
+  {path: 'preferrence', component: PreferrenceComponent},
+  {path: 'profil', component: ProfilComponent},
+  {path:'updatepic',component: UpdateComponent}
 ];
 
 @NgModule({

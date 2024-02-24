@@ -1,0 +1,40 @@
+<section class="bg-white space-top space-extra-bottom overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="about-card">
+          <div class="about-card_img">
+              <img class="w-100" [src]="profil.photo" alt="team image">
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 ps-3 ps-xl-5">
+        <div class="about-card"><div class="about-card_content mb-50">
+            <h2 class="about-card_title">{{ profil.nom }} {{ profil.prenom }}</h2>
+            <p class="about-card_text">Information personnelle et profesionnelle sur votre profil </p>
+            <div class="team-info">
+                <ul>
+                    <li><b>Email:</b> <a>{{ profil.email }}</a></li>
+                    <li><b> Contact:</b> <a>{{ profil.contact }}</a></li>
+                    <li><b>Date de naissance:</b> <span>2 janvier 2006</span></li>
+                    <li><b>Sexe:</b> <span>{{ profil.sexe }}</span></li>
+                    <li><b>Heure de travail:</b> <span>{{ profil.debut }} heure à {{ profil.fin }} heure</span></li>
+
+                </ul>
+            </div>
+            <div class="th-social">
+              <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i>
+              </a><a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+              <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+              <a target="_blank" href="https://pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div>
+      </div>
+      <div class="skill-card_wrapp">
+        <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+

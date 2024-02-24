@@ -30,6 +30,19 @@ export class UserService {
   inscription(user: any):Observable<any> {
     return this.http.post(baseurl+'/user/inscription', user);
   }
+  getUserInfo():Promise<any> {
+    const token = window.localStorage.getItem('tokenuser');
+    return this.http.get<any>(baseurl + '/user/info?token='+token).toPromise();
+  }
+
+  updateUserInfo(data :any) :Observable<any> {
+    return this.http.post(baseurl+'/user/updateprofil', data);
+  }
+
+  updatePic(data :any) :Observable<any> {
+    return this.http.post(baseurl+'/user/updatepic', data);
+  }
+
 
 
 

@@ -12,8 +12,8 @@ export class ServicesalonComponent implements OnInit {
   servicesCategoriesList: any[] = [];
   servicesList: any[] = [];
 
-  donneesAffichees: any[] = []; 
-  taillePage: number = 9; 
+  donneesAffichees: any[] = [];
+  taillePage: number = 9;
   pageActuelle: number = 1;
   pageTotal: number = 0;
 
@@ -28,7 +28,7 @@ export class ServicesalonComponent implements OnInit {
     setTimeout(() => {
       this.chargementEnCours = false;
     }, 1000);
-     
+
   }
 
   goAccueil() {

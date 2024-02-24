@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +21,9 @@ import { PaiementComponent } from './components/paiement/paiement.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
 import {EmailVerifyComponent} from './components/emailverify/emailverify.component';
 import {NotificationListComponent} from './components/notification/notification-list.component';
-import {PreferrenceComponent} from './components/preferrence/preferrence.component'
+import {PreferrenceComponent} from './components/preferrence/preferrence.component';
+import {ProfilComponent} from './components/profil/profil.component';
+import {UpdateComponent} from './components/updatepic/updatepic.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,9 @@ import {PreferrenceComponent} from './components/preferrence/preferrence.compone
     HistoriqueComponent,
     EmailVerifyComponent,
     NotificationListComponent,
-    PreferrenceComponent
+    PreferrenceComponent,
+    ProfilComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +51,8 @@ import {PreferrenceComponent} from './components/preferrence/preferrence.compone
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
