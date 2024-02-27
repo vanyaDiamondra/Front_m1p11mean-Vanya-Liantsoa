@@ -1,0 +1,116 @@
+<app-header></app-header>
+
+<div>
+    <div>
+        <div class="row">
+            <div class="col-xl-1">
+                <div class="img1" data-right="0%"><img src="assets/img/shape/leaves_6.png"  alt="About"></div>
+                <div class="img1"><img src="assets/img/shape/flower_1_3.png" alt="About"></div>
+                <div class="img1"><img src="assets/img/shape/leaves_6.png" alt="About"></div>
+            </div>
+            <div class="col-xl-4">
+              <div class="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <h4>Modification profil</h4>
+                            <p></p>
+                          <div class="form-group col-md-9">
+                            <!-- <i class="fa-sharp fa-regular fa-name"></i> -->
+                            <input type="text" class="form-control"[(ngModel)]="profil.nom" name="nom" id="nom" placeholder="Nom">
+                          </div>
+
+                          <div class="form-group col-md-9">
+                            <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
+                            <input type="text" class="form-control" [(ngModel)]="profil.prenom" name="prenom" placeholder="Prenom">
+                          </div>
+                          <div class="form-group col-md-9">
+                            <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
+                            <input type="text" class="form-control" [(ngModel)]="profil.contact" name="contact" placeholder="Contact">
+                          </div>
+                          <div class="form-group col-md-9">
+                            <!-- <i class="fa-sharp fa-regular fa-calendar"></i> -->
+                            <input type="date"  [(ngModel)]="profil.date_naissance" name="date_naissance"  placeholder="Date de naissance">
+                          </div>
+
+                          <div class="form-group col-md-9">
+                            <input type="time" class="form-control" [(ngModel)]="profil.debut" name="debut" placeholder="Heure d'entrée">
+                          </div>
+
+
+                          <div class="form-group col-md-9">
+                            <input type="time" class="form-control" [(ngModel)]="profil.fin" name="sortie" placeholder="Heure de sortie">
+                          </div>
+
+
+
+                            <div class="form-btn col-9">
+                              <button class="th-btn fw-btn" (click) = "doSignIn()">Modifier<i class="fa-solid fa-arrow-right ms-2"></i>
+                              </button>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-7" >
+                <div class="overflow-hidden">
+                    <div class="shape-mockup" data-top="0%" data-left="0%"><img src="assets/img/shape/flower_1_1.png" alt="shape">
+                    </div>
+                    <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-right="0%">
+                        <img  src="assets/img/shape/flower_1_2.png" alt="shape">
+                    </div>
+
+                    <div class="container">
+                        <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-left="0%">
+                            <img src="assets/img/shape/service_shape2.png" style="position: relative; left: 200px;" alt="shape">
+                        </div>
+                    </div>
+                    <div style="display: block; margin: auto; text-align: center; margin-top: 23%;">
+                        <h3 style="color: grey;">" Votre salon de beauté professionnel "</h3>
+                        <p><b>m1p11mean-Vanya-Liantsoa</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="shape-mockup jump d-none d-lg-block" data-top="0%" data-left="0%"><img
+        src="assets/img/shape/leaves_3.png" alt="shape"></div>
+    <div class="shape-mockup jump d-none d-xl-block" data-bottom="15%" data-right="0%"><img
+        src="assets/img/shape/leaves_2.png" alt="shape"></div>
+    <div class="appointment-area space" id="contact-sec" data-bg-src="assets/img/bg/appointment_bg_1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 wow fadeInLeft">
+                    <div class="img-box1">
+                        <div class="img1"><img class="tilt-active" src="assets/img/welcome.webp" alt="About">
+                        </div>
+                        <div class="img3"><img src="assets/img/shape/flower_1_3.png" alt="About"></div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="ps-xl-4 wow fadeInRight">
+                        <div class="title-area mb-25"><span class="sub-title">A propos de nous<img
+                                    src="assets/img/theme-img/title_right.svg" alt=""></span>
+                            <h2 class="sec-title mb-20"> Notre identité</h2>
+                            <p class="mb-30">Découvrez un monde de tranquillité, de luxe et de soins personnalisés en vous lançant dans un voyage de bien-être et de renouveau. Visitez-nous aujourd'hui et laissez-nous vous transporter dans un royaume de beauté et de sérénité.</p>
+                        </div>
+                        <p>Nos prestations :</p>
+                        <div class="available-list" >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec-shape"><span class="sec-shape_img"><img src="assets/img/icon/girl.svg" alt=""></span></div>
+
+
+</div>
+
+<app-footer></app-footer>
