@@ -9,98 +9,36 @@ export class EmployeService {
 
   constructor(private http: HttpClient) { }
 
-  async rdvEmploye(): Promise<any[]>  {
+  rdvEmploye(): Promise<any[]>  {
     const token = window.localStorage.getItem('tokenuser');
-    try {
-        const result = await this.http.get<any[]>(baseurl + '/employe/rdv?token='+token).toPromise();
-        if (result !== undefined) {
-            return result;
-        } else {
-            throw new Error('Donnée non définie');
-        }
-      } catch (error) {
-          console.error('Erreur:', error);
-          throw error;
-      }
+    return this.http.get<any[]>(baseurl + '/employe/rdv?token='+token).toPromise();
   }
 
-  async dailyTasks(date: string | undefined = undefined): Promise<any[]>  {
+  dailyTasks(date: string | undefined = undefined): Promise<any[]>  {
     const token = window.localStorage.getItem('tokenuser');
-    try {
-      const result = await this.http.get<any[]>(baseurl + '/employe/tasks?token='+token+"&date="+date).toPromise();
-      if (result !== undefined) {
-            return result;
-        } else {
-            throw new Error('Donnée non définie');
-        }
-      } catch (error) {
-          console.error('Erreur:', error);
-          throw error;
-      }
+    return this.http.get<any[]>(baseurl + '/employe/tasks?token='+token+"&date="+date).toPromise();
   }
 
-  async doneDailyTasks(date: string | undefined = undefined): Promise<any[]>  {
+  doneDailyTasks(date: string | undefined = undefined): Promise<any[]>  {
     const token = window.localStorage.getItem('tokenuser');
-    try {
-      const result = await this.http.get<any[]>(baseurl + '/employe/tasks/done?token='+token+"&date="+date).toPromise();
-      if (result !== undefined) {
-            return result;
-        } else {
-            throw new Error('Donnée non définie');
-        }
-      } catch (error) {
-          console.error('Erreur:', error);
-          throw error;
-      }
+    return this.http.get<any[]>(baseurl + '/employe/tasks/done?token='+token+"&date="+date).toPromise();
   }
 
-  async addTaskDone(_id: string): Promise<any[]>  {
-    try {
-      const result = await this.http.get<any[]>(baseurl + '/employe/tasks/setdone?_id='+_id).toPromise();
-      if (result !== undefined) {
-            return result;
-        } else {
-            throw new Error('Donnée non définie');
-        }
-      } catch (error) {
-          console.error('Erreur:', error);
-          throw error;
-      }
+  addTaskDone(_id: string): Promise<any[]>  {
+    return this.http.get<any[]>(baseurl + '/employe/tasks/setdone?_id='+_id).toPromise();
   }
 
-  async rollBackTaskDone(_id: string): Promise<any[]>  {
-    try {
-      const result = await this.http.get<any[]>(baseurl + '/employe/tasks/rollbackdone?_id='+_id).toPromise();
-      if (result !== undefined) {
-            return result;
-        } else {
-            throw new Error('Donnée non définie');
-        }
-    } catch (error) {
-        console.error('Erreur:', error);
-        throw error;
+  rollBackTaskDone(_id: string): Promise<any[]>  {
+    return this.http.get<any[]>(baseurl + '/employe/tasks/rollbackdone?_id='+_id).toPromise();
+  }
+
+  filterrdvEmploye(month: number): Promise<any[]>  {
+    const token = window.localStorage.getItem('tokenuser');
+    if( month == 0 ) {
+      return this.http.get<any[]>(baseurl + '/employe/rdv?token='+token).toPromise();
+    } else{
+      return this.http.get<any[]>(baseurl + '/employe/rdv?token='+token+'&month='+month).toPromise();
     }
-  }
-
-  async filterrdvEmploye(month: number | undefined = undefined): Promise<any[]>  {
-    const token = window.localStorage.getItem('tokenuser');
-    try {
-      if( month == 0 ) {
-        const result = await this.http.get<any[]>(baseurl + '/employe/rdv?token='+token).toPromise();
-        if (result !== undefined) {
-          return result;
-        }
-      } else{
-        const result = await this.http.get<any[]>(baseurl + '/employe/rdv?token='+token+'&month='+month).toPromise();
-        if (result !== undefined) {
-          return result;
-        }
-      }
-    } catch (error) {
-      console.error('Erreur:', error);
-      throw error;
-    }
-    return [];
   }
 
 }

@@ -101,8 +101,5 @@
       }
     }
   },
-  "defaultProject": "vanya-angular",
-  "cli": {
-    "analytics": "e98f3c2b-f745-4958-87dd-11e62fd28951"
-  }
+  "defaultProject": "vanya-angular"
 }

@@ -8,7 +8,7 @@ import { EmployeService } from 'src/app/services/employe.service';
 })
 export class EmployerdvComponent implements OnInit {
 
-  rdvList: any[] | undefined = [];
+  rdvList: any[] = [];
   chargementEnCours: boolean = true;
   filterCriteria = 0;
 
