@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employesidebar',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployesidebarComponent implements OnInit {
 
-  constructor() { }
+  clickProfil = false;
+
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
+  }
+  logout() {
+
+    localStorage.removeItem('tokenuser');
+    this.router.navigate(['/']);
+  }
+  seeProfil() {
+    this.router.navigate(['/profil']);
+  }
+  toggleProfil() {
+    this.clickProfil = !this.clickProfil;
   }
 
 }

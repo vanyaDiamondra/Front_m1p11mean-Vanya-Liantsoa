@@ -10,8 +10,8 @@ import { EmployeService } from 'src/app/services/employe.service';
 })
 export class EmployetachesComponent implements OnInit {
 
-  rdvList: any[] = [];
-  doneRdvList: any[] = [];
+  rdvList: any[]= [];
+  doneRdvList: any[]= [];
   chargementEnCours: boolean = true;
   filterCriteria = '';
 

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 import { AngularFireStorage } from "@angular/fire/compat/storage"
 
@@ -9,8 +11,9 @@ import { AngularFireStorage } from "@angular/fire/compat/storage"
 })
 export class UpdateComponent {
   imageUrl = '';
+  data: { token: string | null; url: string } = { token: null, url: this.imageUrl };
 
-  constructor(private fireStorage:AngularFireStorage){}
+  constructor(private fireStorage:AngularFireStorage,private userService: UserService, private router: Router){}
 
 
   onDragOver(event: DragEvent) {
@@ -103,6 +106,21 @@ export class UpdateComponent {
         imageView.style.border = "0" ;
       }
     }
+  }
+  doUpdatePic(){
+    this.data.token = window.localStorage.getItem('tokenuser');
+    this.data.url = this.imageUrl;
+    this.userService.updatePic(this.data).subscribe(
+      response => {
+        console.log('Server Response:', response);
+        this.router.navigate(['/profil']);
+      },
+      error => {
+        console.error('Error:', error.error);
+        this.router.navigate(['/profil']);
+
+      }
+    );
   }
 
 }
