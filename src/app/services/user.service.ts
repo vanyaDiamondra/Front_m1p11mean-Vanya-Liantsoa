@@ -17,9 +17,29 @@ export class UserService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  seeProfil(token: string | null): Promise<any[]> {
-    return this.http.get<any[]>(baseurl + '/token?token='+token).toPromise();
+  async getServices(): Promise<any[]> {
+    try {
+      const result = await this.http.get<any>(baseurl + '/service').toPromise();
+      if (result !== undefined) {
+          return result;
+      } else {
+          throw new Error('Donnée non définie');
+      }
+    } catch (error) {
+        console.error('Erreur:', error);
+        throw error;
+    }
   }
+
+
+  async seeProfil(token: string | null): Promise<any[]> {
+    const result = await this.http.get<any[]>(baseurl + '/token?token='+token).toPromise();
+    if (result !== undefined) {
+      return result;
+    }
+    return [];
+  }
+
   inscription(user: any):Observable<any> {
     return this.http.post(baseurl+'/user/inscription', user);
   }
