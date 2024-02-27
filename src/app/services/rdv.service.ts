@@ -11,24 +11,56 @@ export class RdvService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  prendreRendezVous(serviceId: string, dateEtHeureRdv: string): Promise<any[]>  {
+  async prendreRendezVous(serviceId: string, dateEtHeureRdv: string): Promise<any[]>  {
     const token = window.localStorage.getItem('tokenuser');
     const rdv = {
       token: token,
       serviceId: serviceId,
       dateEtHeureRdv: dateEtHeureRdv,
     };
-    
-    return this.http.post<any[]>(baseurl + '/rdv/check', rdv).toPromise();
+    try {
+      const result = await this.http.post<any[]>(baseurl + '/rdv/check', rdv).toPromise();
+      if (result !== undefined) {
+          return result;
+      } else {
+          throw new Error('Donnée non définie');
+      }
+    } catch (error) {
+        console.error('Erreur:', error);
+        throw error;
+    }
+
+
   }
 
-  paiementRdv(rdv:any): Promise<any[]>  {
-    return this.http.post<any[]>(baseurl + '/rdv', rdv).toPromise();
+  async paiementRdv(rdv:any): Promise<any[]>  {
+    try {
+      const result = await this.http.post<any[]>(baseurl + '/rdv', rdv).toPromise();
+      if (result !== undefined) {
+          return result;
+      } else {
+          throw new Error('Donnée non définie');
+      }
+    } catch (error) {
+        console.error('Erreur:', error);
+        throw error;
+    }
   }
 
-  historiqueRdv(): Promise<any[]>  {
+  async historiqueRdv(): Promise<any[]>  {
     const token = window.localStorage.getItem('tokenuser');
-    return this.http.get<any[]>(baseurl + '/rdv?token='+token).toPromise();
+    try {
+      const result = await this.http.get<any[]>(baseurl + '/rdv?token='+token).toPromise();
+      if (result !== undefined) {
+          return result;
+      } else {
+          throw new Error('Donnée non définie');
+      }
+    } catch (error) {
+        console.error('Erreur:', error);
+        throw error;
+    }
+
   }
-  
+
 }

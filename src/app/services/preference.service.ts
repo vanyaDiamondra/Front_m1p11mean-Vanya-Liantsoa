@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import {baseurl} from './routeconfig';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,8 +20,19 @@ export class PreferenceService {
   noterEmp(data: any,id:string):Observable<any> {
     return this.http.post(baseurl+'/service/ajoutprefemp/'+id, data);
   }
-  getPrefNote(serviceid: String| undefined | null): Promise<number> {
-    return this.http.get<number>(baseurl + '/service/getprefnote/'+serviceid).toPromise();
+  async getPrefNote(serviceid: String| undefined | null): Promise<number> {
+    try {
+      const result = await this.http.get<any>(baseurl + '/service/getprefnote/'+serviceid).toPromise();
+      if (result !== undefined) {
+          return result;
+      } else {
+          throw new Error('Donnée non définie');
+      }
+    } catch (error) {
+        console.error('Erreur:', error);
+        throw error;
+    }
+
   }
 
 }

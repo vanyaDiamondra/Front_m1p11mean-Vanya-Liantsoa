@@ -1,0 +1,21 @@
+<input type="file" (change)="onFileChange($event)">
+<div id="drag-container">
+  <div
+    class="drag-item"
+    draggable="true"
+    (dragstart)="onDragStart($event)"
+    (dragend)="onDragEnd($event)"
+  >
+    Drag me!
+  </div>
+  <div
+    class="drop-target"
+    (dragover)="onDragOver($event)"
+    (dragenter)="onDragEnter($event)"
+    (dragleave)="onDragLeave($event)"
+    (drop)="onDrop($event)"
+  >
+    Drop here!
+  </div>
+</div>
+

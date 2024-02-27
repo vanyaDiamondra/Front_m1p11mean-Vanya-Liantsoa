@@ -41,6 +41,7 @@ export class PreferrenceComponent implements OnInit {
 
 
   async getServices() {
+    
     this.servicesList = await this.servicesService.getPrefServices();
     this.donneesAffichees = this.getPageSlice(this.servicesList, this.pageActuelle);
     this.pageTotal = Math.ceil(this.servicesList.length / this.taillePage);

@@ -11,7 +11,9 @@ import {EmailVerifyComponent} from './components/emailverify/emailverify.compone
 import { EmployerdvComponent } from './components/employerdv/employerdv.component';
 import { EmployetachesComponent } from './components/employetaches/employetaches.component';
 import {NotificationListComponent} from './components/notification/notification-list.component';
-import {PreferrenceComponent} from './components/preferrence/preferrence.component'
+import {PreferrenceComponent} from './components/preferrence/preferrence.component';
+import {ProfilComponent} from './components/profil/profil.component';
+import {UpdateComponent} from './components/updatepic/updatepic.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path: 'employe', component: EmployerdvComponent},
   {path: 'employe/tasks', component: EmployetachesComponent},
   {path: 'notif', component: NotificationListComponent},
-  {path: 'preferrence', component: PreferrenceComponent}
+  {path: 'preferrence', component: PreferrenceComponent},
+  {path: 'profil', component: ProfilComponent},
+  {path:'updatepic',component: UpdateComponent}
 ];
 
 @NgModule({

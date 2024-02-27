@@ -34,10 +34,6 @@ export class InscriptionComponent implements OnInit {
 
       }
     );
-
-
-
-
   }
 
 }

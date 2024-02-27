@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +25,9 @@ import { EmployerdvComponent } from './components/employerdv/employerdv.componen
 import { EmployesidebarComponent } from './components/employesidebar/employesidebar.component';
 import { EmployetachesComponent } from './components/employetaches/employetaches.component';
 import {NotificationListComponent} from './components/notification/notification-list.component';
-import {PreferrenceComponent} from './components/preferrence/preferrence.component'
+import {PreferrenceComponent} from './components/preferrence/preferrence.component';
+import {ProfilComponent} from './components/profil/profil.component';
+import {UpdateComponent} from './components/updatepic/updatepic.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,9 @@ import {PreferrenceComponent} from './components/preferrence/preferrence.compone
     EmployesidebarComponent,
     EmployetachesComponent,
     NotificationListComponent,
-    PreferrenceComponent
+    PreferrenceComponent,
+    ProfilComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,8 @@ import {PreferrenceComponent} from './components/preferrence/preferrence.compone
     ReactiveFormsModule,
     HttpClientModule,
     DragDropModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
