@@ -14,6 +14,10 @@ import {NotificationListComponent} from './components/notification/notification-
 import {PreferrenceComponent} from './components/preferrence/preferrence.component';
 import {ProfilComponent} from './components/profil/profil.component';
 import {UpdateComponent} from './components/updatepic/updatepic.component';
+import { EmployelistComponent } from './components/employelist/employelist.component';
+import { ProfileEditComponent } from './components/profiledit/profiledit.component';
+import { EmployeEditComponent } from './components/employeedit/employeedit.component';
+import { EmployeCreateComponent } from './components/employecreate/employecreate.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -29,7 +33,11 @@ const routes: Routes = [
   {path: 'notif', component: NotificationListComponent},
   {path: 'preferrence', component: PreferrenceComponent},
   {path: 'profil', component: ProfilComponent},
-  {path:'updatepic',component: UpdateComponent}
+  {path:'updatepic',component: UpdateComponent},
+  {path:'emplist',component: EmployelistComponent},
+  {path:'profiledit',component: ProfileEditComponent},
+  {path:'employeedit/:id',component: EmployeEditComponent},
+  {path:'employecreate',component: EmployeCreateComponent}
 ];
 
 @NgModule({

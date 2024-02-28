@@ -1,0 +1,56 @@
+<div *ngIf="chargementEnCours">
+  <app-loader></app-loader>
+</div>
+
+<div *ngIf="!chargementEnCours">
+  <app-header></app-header>
+
+  <section class="overflow-hidden" id="service-sec">
+      <div class="container">
+          <div class="title-area text-center"><span class="sub-title style2">Nos employes</span> <img
+                  src="assets/img/theme-img/title_shape_1.svg" alt="">
+              <h2 class="sec-title"></h2>
+          </div>
+          <div class="row">
+              <div class="col-xl-3">
+                  <div class="widget widget_search">
+                      <form class="search-form" (ngSubmit)="searchKeyWords()">
+                          <input type="text" [(ngModel)]="searchElements.keyWords" name="keyWords" placeholder="Rechercher">
+                          <button type="submit"><i class="far fa-search"></i></button>
+                      </form>
+                  </div>
+
+              </div>
+              <div class="col-xl-9">
+                  <div class="row">
+                      <div class="col-xl-4" *ngFor="let employes of donneesAffichees">
+                          <div class="price-card wow fadeInLeft">
+                              <div class="price-card_content">
+                                  <img [src]="employes.photo" alt="Veuillez-patienter" style="display: block; margin: auto; width: 60%; border-radius: 50%;">
+                                  <hr class="style1">
+                                  <div class="available-list">
+                                      <ul>
+                                          <li><img src="assets/img/theme-img/title_left.svg" alt=""> <b>{{ employes.nom }} {{ employes.prenom }}</b></li>
+                                      </ul>
+                                      <div class="price-btn"><a [routerLink]="['/rdv', employes?._id]" class="th-btn">Voir<i
+                                                  class="fa-solid fa-arrow-right ms-2"></i></a></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="th-pagination text-center pt-50">
+                          <ul>
+                              <li *ngFor="let pageNumber of getPageNumbers()">
+                                  <a href="javascript:void(0);" (click)="setPage(pageNumber)">{{ pageNumber }}</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+          </div>
+
+          </div>
+      </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>

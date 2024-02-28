@@ -56,6 +56,9 @@ export class UserService {
     return this.http.post(baseurl+'/user/updatepic', data);
   }
 
+  
+
+
 
 
 

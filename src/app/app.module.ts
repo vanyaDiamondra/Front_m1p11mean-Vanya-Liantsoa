@@ -28,6 +28,10 @@ import {NotificationListComponent} from './components/notification/notification-
 import {PreferrenceComponent} from './components/preferrence/preferrence.component';
 import {ProfilComponent} from './components/profil/profil.component';
 import {UpdateComponent} from './components/updatepic/updatepic.component';
+import { EmployelistComponent } from './components/employelist/employelist.component';
+import { ProfileEditComponent } from './components/profiledit/profiledit.component';
+import { EmployeEditComponent } from './components/employeedit/employeedit.component';
+import { EmployeCreateComponent } from './components/employecreate/employecreate.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import {UpdateComponent} from './components/updatepic/updatepic.component';
     NotificationListComponent,
     PreferrenceComponent,
     ProfilComponent,
-    UpdateComponent
+    UpdateComponent,
+    EmployelistComponent,
+    ProfileEditComponent,
+    EmployeEditComponent,
+    EmployeCreateComponent
   ],
   imports: [
     BrowserModule,
