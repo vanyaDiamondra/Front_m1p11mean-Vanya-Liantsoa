@@ -37,6 +37,10 @@ import { EmployeEditComponent } from './components/employeedit/employeedit.compo
 import { EmployeCreateComponent } from './components/employecreate/employecreate.component';
 import { ServiceEditComponent } from './components/serviceedit/serviceedit.component';
 import { ServiceListComponent } from './components/servicelist/servicelist.component';
+import { ServiceCreateComponent } from './components/servicecreate/servicecreate.component';
+import { DepenseListComponent } from './components/depenselist/depenselist.component';
+import { DepenseEditComponent } from './components/depenseedit/depenseedit.component';
+import { DepenseCreateComponent } from './components/depensecreate/depensecreate.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +71,11 @@ import { ServiceListComponent } from './components/servicelist/servicelist.compo
     EmployeEditComponent,
     EmployeCreateComponent,
     ServiceEditComponent,
-    ServiceListComponent
+    ServiceListComponent,
+    ServiceCreateComponent,
+    DepenseListComponent,
+    DepenseEditComponent,
+    DepenseCreateComponent
   ],
   imports: [
     BrowserModule,

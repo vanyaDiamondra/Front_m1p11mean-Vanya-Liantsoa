@@ -6,11 +6,11 @@ import { EmployeService } from '../../services/employe.service';
 import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
-  selector: 'app-serviceedit',
-  templateUrl: './serviceedit.component.html'
+  selector: 'app-servicecreate',
+  templateUrl: './servicecreate.component.html'
 })
 
-export class ServiceEditComponent implements OnInit {
+export class ServiceCreateComponent implements OnInit {
 
   profil: any = {};
   servicesCategoriesList: any[] = [];
@@ -20,7 +20,7 @@ export class ServiceEditComponent implements OnInit {
   constructor(private userService: ServicesService, private router: Router, private route: ActivatedRoute) {   }
 
   ngOnInit(): void {
-    this.getInfo();
+
     this.getServiceCategories();
   }
   doSignIn(): any {
@@ -31,8 +31,8 @@ export class ServiceEditComponent implements OnInit {
       this.profil.nom_categorie =  this.selectedOption.nom;
     }
 
-    const serviceId = this.route.snapshot.params.id;
-    this.userService.updateServiceInfo(this.profil,serviceId).subscribe(
+
+    this.userService.createService(this.profil).subscribe(
       response => {
         console.log('Server Response:', response);
         this.router.navigate(['/servicelist']);
@@ -48,10 +48,7 @@ export class ServiceEditComponent implements OnInit {
     this.servicesCategoriesList = await this.userService.getServicesCategories();
   }
 
-  async getInfo() {
-    const userId = this.route.snapshot.params.id;
-    this.profil = await this.userService.getUserInfo(userId);
-  }
+
 
 
 }
