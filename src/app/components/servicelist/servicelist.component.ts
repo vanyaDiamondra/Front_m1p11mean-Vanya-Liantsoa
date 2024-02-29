@@ -32,12 +32,7 @@ export class ServiceListComponent implements OnInit {
   }
 
   goAccueil() {
-    const token = window.localStorage.getItem('tokenuser');
-   if( token == null ){
-    this.router.navigate(['/']);
-   } else{
-    this.router.navigate(['/accueil']);
-   }
+
   }
 
   async getServiceCategories() {
@@ -83,9 +78,9 @@ export class ServiceListComponent implements OnInit {
     const formattedPrice = prix.toLocaleString('fr-FR');
     return formattedPrice.replace(/\s/g, '.');
   }
-  
+
   update(id: string){
-    this.router.navigate(['/employeedit/'+id]);
+    this.router.navigate(['/serviceedit/'+id]);
   }
 
 }

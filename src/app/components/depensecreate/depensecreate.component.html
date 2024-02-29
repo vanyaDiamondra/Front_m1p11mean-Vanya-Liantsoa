@@ -13,7 +13,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
-                            <h4>Modification profil</h4>
+                            <h4>Ajout nouveau dépense</h4>
                             <p></p>
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-name"></i> -->
@@ -22,32 +22,28 @@
 
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                            <input type="text" class="form-control" [(ngModel)]="profil.description" name="description" placeholder="Description">
-                          </div>
-                          <div class="form-group col-md-9">
-                            <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
                             <input type="number" class="form-control" [(ngModel)]="profil.prix" name="prix" placeholder="Prix">
                           </div>
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                            <input type="number" class="form-control" [(ngModel)]="profil.duree" name="duree" placeholder="Durée">
+                            <input type="text" class="form-control" [(ngModel)]="profil.mois" name="mois" placeholder="Mois">
                           </div>
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                            <input type="number" class="form-control" [(ngModel)]="profil.commission" name="commission" placeholder="Commission">
+                            <input type="text" class="form-control" [(ngModel)]="profil.annee" name="annee" placeholder="Annee">
                           </div>
 
                           <div class="form-group col-md-9">
-                          <select [(ngModel)]="selectedOption"  class="form-control" >
-                            <option *ngFor="let option of servicesCategoriesList" [ngValue]="option">{{ option.nom }}</option>
-                            <option *ngIf="servicesCategoriesList.length === 0" disabled>No options available</option>
+                          <select [(ngModel)]="selectedOption"  class="form-control" placeholder="Categorie">
+                            <option *ngFor="let option of depensesCategoriesList" [ngValue]="option">{{ option.nom }}</option>
+                            <option *ngIf="depensesCategoriesList.length === 0" disabled>No options available</option>
                           </select>
                         </div>
 
 
 
                             <div class="form-btn col-9">
-                              <button class="th-btn fw-btn" (click) = "doSignIn()">Modifier<i class="fa-solid fa-arrow-right ms-2"></i>
+                              <button class="th-btn fw-btn" (click) = "doSignIn()">Ajouter<i class="fa-solid fa-arrow-right ms-2"></i>
                               </button>
                             </div>
                         </div>

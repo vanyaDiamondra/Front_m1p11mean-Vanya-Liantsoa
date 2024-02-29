@@ -5,7 +5,7 @@
                 <div class="close-menu"><button class="th-menu-toggle"><i class="fal fa-times"></i></button></div>
             </div>
             <div class="th-mobile-menu">
-               
+
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
                             <ul>
                                 <li><i class="far fa-envelope"></i><a >m1p11mean-Vanya-Liantsoa</a></li>
                                 <li><i class="far fa-phone"></i><a href="tel:+256214203215">+256 214 203 215</a></li>
-                               
+
                             </ul>
                         </div>
                     </div>
@@ -44,16 +44,29 @@
                                 <ul>
                                     <li><a [routerLink]="['/employe']">Rendez-vous</a></li>
                                     <li><a [routerLink]="['/employe/tasks']">Tâches</a></li>
-                                   
+
                                 </ul>
                             </nav>
                             <button class="th-menu-toggle d-inline-block d-lg-none"><i class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
                             <div class="header-button" >
-                                <a class="icon-btn sideMenuToggler">
-                                    <i class="fa-light fa-user"></i>
-                                </a> 
+                              <a (click) = "toggleProfil()" class="icon-btn sideMenuToggler">
+                                <i class="fa-light fa-user"></i>
+                                <div class="col-md-12 col-lg-12 col-xl-12" class="sub-menu" *ngIf="clickProfil">
+                                  <div class="widget woocommerce widget_shopping_cart" style="width: 300px; position: relative; right: 200px; background-color: white;">
+                                      <h5 class="widget_title">Menu</h5>
+                                      <div class="widget_shopping_cart_content">
+                                          <ul class="woocommerce-mini-cart cart_list product_list_widget">
+                                              <li>
+                                                  <p ><a (click)="logout()">Se déconnecter </a></p>
+                                              </li><hr class="style1">
+
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                            </a>
                             </div>
                         </div>
                     </div>

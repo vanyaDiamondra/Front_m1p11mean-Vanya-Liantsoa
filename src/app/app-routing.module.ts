@@ -21,6 +21,12 @@ import { EmployeEditComponent } from './components/employeedit/employeedit.compo
 import { EmployeCreateComponent } from './components/employecreate/employecreate.component';
 import { ServiceEditComponent } from './components/serviceedit/serviceedit.component';
 import { ServiceListComponent } from './components/servicelist/servicelist.component';
+import { ServiceCreateComponent } from './components/servicecreate/servicecreate.component';
+import { DepenseListComponent } from './components/depenselist/depenselist.component';
+import { DepenseEditComponent } from './components/depenseedit/depenseedit.component';
+
+import { DepenseCreateComponent } from './components/depensecreate/depensecreate.component';
+
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -45,6 +51,14 @@ const routes: Routes = [
 
   {path:'servicelist',component: ServiceListComponent},
   {path:'serviceedit/:id',component: ServiceEditComponent},
+  {path:'servicecreate',component: ServiceCreateComponent},
+
+  {path:'depenselist',component: DepenseListComponent},
+  {path:'depenseedit/:id',component: DepenseEditComponent},
+  {path:'depensecreate',component: DepenseCreateComponent},
+
+
+
 ];
 
 @NgModule({
