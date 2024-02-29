@@ -1,106 +1,111 @@
-<app-header></app-header>
-
-<div>
-    <div> 
-        <div class="row">
-            <div class="col-xl-1">
-                <div class="img1" data-right="0%"><img src="assets/img/shape/leaves_6.png"  alt="About"></div>
-                <div class="img1"><img src="assets/img/shape/flower_1_3.png" alt="About"></div>
-                <div class="img1"><img src="assets/img/shape/leaves_6.png" alt="About"></div>
-            </div>
-            <div class="col-xl-5">
-                <br><br>
-                <div class="">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-xl-12">
-                              <h4>Inscription</h4>
-                              <p>Veuillez-vous inscrire pour bénéficier de nos services en ligne</p>
-                
-                            <div class="feedback">
-                                <div *ngIf="feedBack.message === ''; else error">
-                                </div>
-                                <ng-template #error>
-                                  <p style="color: tomato;">{{ feedBack.message }} <i class="fa-sharp fa-regular fa-warning"></i> </p>
-                                </ng-template>
-                            </div>
-                            <div class="form-group col-md-9">
-                              <!-- <i class="fa-sharp fa-regular fa-name"></i> -->
-                              <input type="text" class="form-control"[(ngModel)]="user.nom" name="nom" id="nom" placeholder="Nom">
-                            </div>
-                
-                            <div class="form-group col-md-9">
-                              <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                              <input type="text" class="form-control" [(ngModel)]="user.prenom" name="prenom" placeholder="Prenom">
-                            </div>
-                            <div class="form-group col-md-9">
-                              <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                              <input type="text" class="form-control" [(ngModel)]="user.contact" name="contact" placeholder="Contact">
-                            </div>
-                
-                            <div class="form-group col-md-9">
-                
-                              <select class="form-control" [(ngModel)]="user.sexe" name="sexe" id="sexe">
-                                <option value="" disabled selected>Selectionnez votre sexe</option>
-                                <option value="Femme">Femme</option>
-                                <option value="Homme">Homme</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md-9">
-                              Date de naissance
-                              <input type="date"  [(ngModel)]="user.date_naissance" name="date_naissance"  placeholder="Date de naissance">
-                            </div>
-                
-                
-                              <div class="form-group col-md-9">
-                                <!-- <i class="fa-sharp fa-regular fa-envelope"></i> -->
-                                <input type="email" class="form-control"[(ngModel)]="user.email" name="email" id="email" placeholder="Email">
-                              </div>
-                
-                              <div class="form-group col-md-9">
-                                <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                                <input type="password" class="form-control" [(ngModel)]="user.mdp" name="mdp" placeholder="Mot de passe">
-                              </div>
-                
-                
-                              <div class="form-btn col-9">
-                                <button class="th-btn fw-btn" (click) = "doSignIn()">S'inscrire<i class="fa-solid fa-arrow-right ms-2"></i>
-                                </button>
-                              </div>
-                          </div>
-                        </div>
-                  </div>
-                </div>
-            </div>
-            <div class="col-xl-6" >
-                <div class="overflow-hidden">
-                    <div class="shape-mockup" data-top="0%" data-left="0%"><img src="assets/img/shape/flower_1_1.png" alt="shape">
-                    </div>
-                    <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-right="0%">
-                        <img  src="assets/img/shape/flower_1_2.png" alt="shape">
-                    </div>
-            
-                    <div class="container">
-                        <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-left="0%">
-                            <img src="assets/img/shape/service_shape2.png" style="position: relative; left: 200px;" alt="shape">
-                        </div>
-                    </div>
-                    <div style="display: block; margin: auto; text-align: center; margin-top: 23%;"> 
-                        <h3 style="color: grey;">" Votre salon de beauté professionnel "</h3>
-                        <p><b>m1p11mean-Vanya-Liantsoa</b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-
-    <div class="sec-shape"><span class="sec-shape_img"><img src="assets/img/icon/girl.svg" alt=""></span></div>
-
-  
+<div *ngIf="chargementEnCours">
+  <app-loader></app-loader>
 </div>
 
-<app-footer></app-footer>
+<div *ngIf="!chargementEnCours">
+  <app-header></app-header>
+  <div>
+      <div> 
+          <div class="row">
+              <div class="col-xl-1">
+                  <div class="img1" data-right="0%"><img src="assets/img/shape/leaves_6.png"  alt="About"></div>
+                  <div class="img1"><img src="assets/img/shape/flower_1_3.png" alt="About"></div>
+                  <div class="img1"><img src="assets/img/shape/leaves_6.png" alt="About"></div>
+              </div>
+              <div class="col-xl-5">
+                  <br><br>
+                  <div class="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <h4>Inscription</h4>
+                                <p>Veuillez-vous inscrire pour bénéficier de nos services en ligne</p>
+                  
+                              <div class="feedback">
+                                  <div *ngIf="feedBack.message === ''; else error">
+                                  </div>
+                                  <ng-template #error>
+                                    <p style="color: tomato;">{{ feedBack.message }} <i class="fa-sharp fa-regular fa-warning"></i> </p>
+                                  </ng-template>
+                              </div>
+                              <div class="form-group col-md-9">
+                                <!-- <i class="fa-sharp fa-regular fa-name"></i> -->
+                                <input type="text" class="form-control"[(ngModel)]="user.nom" name="nom" id="nom" placeholder="Nom">
+                              </div>
+                  
+                              <div class="form-group col-md-9">
+                                <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
+                                <input type="text" class="form-control" [(ngModel)]="user.prenom" name="prenom" placeholder="Prenom">
+                              </div>
+                              <div class="form-group col-md-9">
+                                <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
+                                <input type="text" class="form-control" [(ngModel)]="user.contact" name="contact" placeholder="Contact">
+                              </div>
+                  
+                              <div class="form-group col-md-9">
+                  
+                                <select class="form-control" [(ngModel)]="user.sexe" name="sexe" id="sexe">
+                                  <option value="" disabled selected>Selectionnez votre sexe</option>
+                                  <option value="Femme">Femme</option>
+                                  <option value="Homme">Homme</option>
+                                </select>
+                              </div>
+                              <div class="form-group col-md-9">
+                                Date de naissance
+                                <input type="date"  [(ngModel)]="user.date_naissance" name="date_naissance"  placeholder="Date de naissance">
+                              </div>
+                  
+                  
+                                <div class="form-group col-md-9">
+                                  <!-- <i class="fa-sharp fa-regular fa-envelope"></i> -->
+                                  <input type="email" class="form-control"[(ngModel)]="user.email" name="email" id="email" placeholder="Email">
+                                </div>
+                  
+                                <div class="form-group col-md-9">
+                                  <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
+                                  <input type="password" class="form-control" [(ngModel)]="user.mdp" name="mdp" placeholder="Mot de passe">
+                                </div>
+                  
+                  
+                                <div class="form-btn col-9">
+                                  <button class="th-btn fw-btn" (click) = "doSignIn()">S'inscrire<i class="fa-solid fa-arrow-right ms-2"></i>
+                                  </button>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-xl-6" >
+                  <div class="overflow-hidden">
+                      <div class="shape-mockup" data-top="0%" data-left="0%"><img src="assets/img/shape/flower_1_1.png" alt="shape">
+                      </div>
+                      <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-right="0%">
+                          <img  src="assets/img/shape/flower_1_2.png" alt="shape">
+                      </div>
+              
+                      <div class="container">
+                          <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-left="0%">
+                              <img src="assets/img/shape/service_shape2.png" style="position: relative; left: 200px;" alt="shape">
+                          </div>
+                      </div>
+                      <div style="display: block; margin: auto; text-align: center; margin-top: 23%;"> 
+                          <h3 style="color: grey;">" Votre salon de beauté professionnel "</h3>
+                          <p><b>m1p11mean-Vanya-Liantsoa</b></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <br>
+
+      <div class="sec-shape"><span class="sec-shape_img"><img src="assets/img/icon/girl.svg" alt=""></span></div>
+
+    
+  </div>
+  <app-footer></app-footer>
+</div>
+
 
 

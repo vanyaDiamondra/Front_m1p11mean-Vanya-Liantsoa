@@ -28,15 +28,13 @@ export class EmailVerifyComponent implements OnInit {
       error => {
         console.error('Error:', error.error);
         this.feedBack=error.error;
-        //this.router.navigate(['/']);
-
       }
 
     );
   }
 
   goToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
 }

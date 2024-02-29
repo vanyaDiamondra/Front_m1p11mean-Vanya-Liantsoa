@@ -38,8 +38,6 @@ export class PreferrenceComponent implements OnInit {
    }
   }
 
-
-
   async getServices() {
     
     this.servicesList = await this.servicesService.getPrefServices();
@@ -47,11 +45,6 @@ export class PreferrenceComponent implements OnInit {
     this.pageTotal = Math.ceil(this.servicesList.length / this.taillePage);
 
   }
-
-
-
-
-
 
   getPageSlice(data: any[], page: number): any[] {
     const startIndex = (page - 1) * this.taillePage;

@@ -22,7 +22,9 @@ export class PreferenceService {
   }
   async getPrefNote(serviceid: String| undefined | null): Promise<number> {
     try {
-      const result = await this.http.get<any>(baseurl + '/service/getprefnote/'+serviceid).toPromise();
+      const token = window.localStorage.getItem('tokenuser');
+      const result = await this.http.get<any>(baseurl + '/service/getprefnote/'+serviceid+'?token='+token).toPromise();
+      
       if (result !== undefined) {
           return result;
       } else {
