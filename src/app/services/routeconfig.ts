@@ -1,1 +1,1 @@
-export const baseurl = 'http://localhost:3000';
+export const baseurl = 'https://back-m1p11mean-vanya-liantsoa.onrender.com';
