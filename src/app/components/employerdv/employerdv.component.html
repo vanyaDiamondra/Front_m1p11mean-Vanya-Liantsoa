@@ -46,7 +46,7 @@
                                         <p>Client : {{ rdv.client.nom }} {{ rdv.client.prenom }}</p>
                                         <p>Date : {{ getDateFromString(rdv.date) }} de {{ getTimeFromString(rdv.heure_debut) }}h à  {{ getTimeFromString(rdv.heure_fin) }}h</p>
                                         <p>Payé : {{ getFormattedPrice(rdv.service.prix) }} Ar  &nbsp; 
-                                             <span *ngIf="rdv.status === 0; else done">
+                                             <span *ngIf="rdv.status === 1; else done">
                                                 <span style="text-align: center; color: white; display: block; background-color: green; width: 150px;"> Statut : Effectuée </span>
                                              </span>
                                             <ng-template #done>

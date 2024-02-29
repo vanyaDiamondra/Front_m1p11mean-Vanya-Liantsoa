@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
             } else if( this.feedBack.profilId === 2){
               this.router.navigate(['/employe']);
             } else if( this.feedBack.profilId === 3 ){
-              this.router.navigate(['/manager']);
+              this.router.navigate(['/stat']);
             }
           
           }

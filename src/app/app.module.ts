@@ -6,6 +6,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { environment } from 'src/environments/environment';
+import { NgChartsModule } from 'ng2-charts'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,8 @@ import {NotificationListComponent} from './components/notification/notification-
 import {PreferrenceComponent} from './components/preferrence/preferrence.component';
 import {ProfilComponent} from './components/profil/profil.component';
 import {UpdateComponent} from './components/updatepic/updatepic.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { ManagersidebarComponent } from './components/managersidebar/managersidebar.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import {UpdateComponent} from './components/updatepic/updatepic.component';
     NotificationListComponent,
     PreferrenceComponent,
     ProfilComponent,
-    UpdateComponent
+    UpdateComponent, 
+    StatisticsComponent,
+    ManagersidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import {UpdateComponent} from './components/updatepic/updatepic.component';
     HttpClientModule,
     DragDropModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
