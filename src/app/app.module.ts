@@ -6,7 +6,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { environment } from 'src/environments/environment';
-import { NgChartsModule } from 'ng2-charts'; 
+import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,10 @@ import {ProfilComponent} from './components/profil/profil.component';
 import {UpdateComponent} from './components/updatepic/updatepic.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ManagersidebarComponent } from './components/managersidebar/managersidebar.component';
+import { EmployelistComponent } from './components/employelist/employelist.component';
+import { ProfileEditComponent } from './components/profiledit/profiledit.component';
+import { EmployeEditComponent } from './components/employeedit/employeedit.component';
+import { EmployeCreateComponent } from './components/employecreate/employecreate.component';
 
 @NgModule({
   declarations: [
@@ -53,9 +57,13 @@ import { ManagersidebarComponent } from './components/managersidebar/managerside
     NotificationListComponent,
     PreferrenceComponent,
     ProfilComponent,
-    UpdateComponent, 
+    UpdateComponent,
     StatisticsComponent,
-    ManagersidebarComponent
+    ManagersidebarComponent,
+    EmployelistComponent,
+    ProfileEditComponent,
+    EmployeEditComponent,
+    EmployeCreateComponent
   ],
   imports: [
     BrowserModule,
