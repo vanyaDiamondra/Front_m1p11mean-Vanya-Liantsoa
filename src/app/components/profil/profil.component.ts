@@ -36,20 +36,12 @@ export class ProfilComponent implements OnInit {
    }
   }
   goEdit(){
-    const token = window.localStorage.getItem('tokenuser');
-    if( token == null ){
-     this.router.navigate(['/']);
-    } else{
-     this.router.navigate(['/profil']);
-    }
+
+    this.router.navigate(['/profiledit']);
+
   }
   goUpdatePic(){
-    const token = window.localStorage.getItem('tokenuser');
-    if( token == null ){
-     this.router.navigate(['/']);
-    } else{
-     this.router.navigate(['/profil']);
-    }
+    this.router.navigate(['/updatepic']);
   }
 
 
