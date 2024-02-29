@@ -25,10 +25,6 @@ export class ServicesalonComponent implements OnInit {
     this.goAccueil();
     this.getServiceCategories();
     this.getServices();
-    setTimeout(() => {
-      this.chargementEnCours = false;
-    }, 1000);
-
   }
 
   goAccueil() {
@@ -49,6 +45,7 @@ export class ServicesalonComponent implements OnInit {
     this.donneesAffichees = this.getPageSlice(this.servicesList, this.pageActuelle);
     this.pageTotal = Math.ceil(this.servicesList.length / this.taillePage);
 
+    this.chargementEnCours = false;
   }
 
   async searchKeyWords() {
