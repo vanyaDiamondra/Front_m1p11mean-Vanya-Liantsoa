@@ -35,6 +35,8 @@ import { EmployelistComponent } from './components/employelist/employelist.compo
 import { ProfileEditComponent } from './components/profiledit/profiledit.component';
 import { EmployeEditComponent } from './components/employeedit/employeedit.component';
 import { EmployeCreateComponent } from './components/employecreate/employecreate.component';
+import { ServiceEditComponent } from './components/serviceedit/serviceedit.component';
+import { ServiceListComponent } from './components/servicelist/servicelist.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { EmployeCreateComponent } from './components/employecreate/employecreate
     EmployelistComponent,
     ProfileEditComponent,
     EmployeEditComponent,
-    EmployeCreateComponent
+    EmployeCreateComponent,
+    ServiceEditComponent,
+    ServiceListComponent
   ],
   imports: [
     BrowserModule,

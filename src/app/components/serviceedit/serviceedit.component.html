@@ -22,35 +22,26 @@
 
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                            <input type="text" class="form-control" [(ngModel)]="profil.prenom" name="prenom" placeholder="Prenom">
+                            <input type="text" class="form-control" [(ngModel)]="profil.description" name="description" placeholder="Description">
                           </div>
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                            <input type="text" class="form-control" [(ngModel)]="profil.contact" name="contact" placeholder="Contact">
+                            <input type="number" class="form-control" [(ngModel)]="profil.prix" name="prix" placeholder="Prix">
                           </div>
-                          <div class="form-group col-md-9">
-                            <!-- <i class="fa-sharp fa-regular fa-calendar"></i> -->
-                            <input type="date"  [(ngModel)]="profil.date_naissance" name="date_naissance"  placeholder="Date de naissance">
-                          </div>
-
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                            <input type="text" class="form-control" [(ngModel)]="profil.email" name="email" placeholder="Email">
+                            <input type="number" class="form-control" [(ngModel)]="profil.duree" name="duree" placeholder="Durée">
                           </div>
-
-                          <div class="form-group col-md-9">
-                            <input type="time" class="form-control" [(ngModel)]="profil.debut" name="debut" placeholder="Heure d'entrée">
-                          </div>
-
-
-                          <div class="form-group col-md-9">
-                            <input type="time" class="form-control" [(ngModel)]="profil.fin" name="sortie" placeholder="Heure de sortie">
-                          </div>
-
                           <div class="form-group col-md-9">
                             <!-- <i class="fa-sharp fa-regular fa-eye"></i> -->
-                            <input type="password" class="form-control" [(ngModel)]="user.mdp" name="mdp" placeholder="Mot de passe">
+                            <input type="number" class="form-control" [(ngModel)]="profil.commission" name="commission" placeholder="Commission">
                           </div>
+
+                          <div class="form-group col-md-9">
+                          <select [(ngModel)]="selectedOption"  class="form-control">
+                            <option *ngFor="let option of servicesCategoriesList" [ngValue]="option">{{ option.nom }}</option>
+                          </select>
+                        </div>
 
 
 

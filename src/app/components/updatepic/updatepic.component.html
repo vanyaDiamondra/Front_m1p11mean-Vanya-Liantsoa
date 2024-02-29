@@ -1,21 +1,31 @@
-<input type="file" (change)="onFileChange($event)">
-<div id="drag-container">
-  <div
-    class="drag-item"
-    draggable="true"
-    (dragstart)="onDragStart($event)"
-    (dragend)="onDragEnd($event)"
-  >
-    Drag me!
-  </div>
-  <div
-    class="drop-target"
-    (dragover)="onDragOver($event)"
-    (dragenter)="onDragEnter($event)"
-    (dragleave)="onDragLeave($event)"
-    (drop)="onDrop($event)"
-  >
-    Drop here!
+<app-employesidebar></app-employesidebar>
+<div class="hero">
+  <label for="input-file" id="drop-area" (dragover)="onDragOver($event)"
+  (dragenter)="onDragEnter($event)"
+  (dragleave)="onDragLeave($event)"
+  (drop)="onDrop($event)">
+      <input type="file" accept="image/*" id="input-file" hidden (change)="onFileChange($event)">
+      <div id="img-view">
+          <img src="assets/img/508-icon.png">
+          <p>Clickez ou bien glisser<br>pour changer la photo</p>
+          <span>Importer une image depuis votre ordinateur</span>
+      </div>
+      <button id="confirm-upload" (click) = "doUpdatePic()">Confirm Upload</button>
+  </label>
+</div>
+<div class="copyright-wrap">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-4">
+              <p class="copyright-text text-white">Rakotoarisoa Miaingo Diamondra Vanya </p>
+          </div>
+          <div class="col-lg-4">
+              <p class="copyright-text text-white">Rakotonirina Liantsoa</p>
+          </div>
+          <div class="col-lg-4">
+              <p class="copyright-text text-white">&copy; m1p11mean-Vanya-Liantsoa</p>
+          </div>
+      </div>
   </div>
 </div>
 

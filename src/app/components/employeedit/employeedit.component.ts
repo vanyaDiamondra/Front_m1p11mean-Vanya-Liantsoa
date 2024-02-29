@@ -11,7 +11,7 @@ import { EmployeService } from '../../services/employe.service';
 
 export class EmployeEditComponent implements OnInit {
 
-  user = {nom:'',prenom:'',contact:'',date_naissance:'',email:'',debut:'',fin:''};
+  user = {nom:'',prenom:'',contact:'',date_naissance:'',email:'',debut:'',fin:'',mdp:''};
   profil: any = {};
 
 
@@ -30,16 +30,17 @@ export class EmployeEditComponent implements OnInit {
     this.user.date_naissance = this.profil.date_naissance;
     this.user.email = this.profil.email;
     this.user.debut = this.profil.debut;
+    
     this.user.fin = this.profil.fin;
 
     this.userService.updateEmployeInfo(this.user,userId).subscribe(
       response => {
         console.log('Server Response:', response);
-        this.router.navigate(['/profil']);
+        this.router.navigate(['/emplist']);
       },
       error => {
         console.error('Error:', error.error);
-        this.router.navigate(['/profil']);
+        this.router.navigate(['/emplist']);
 
       }
     );

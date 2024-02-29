@@ -75,5 +75,8 @@ export class EmployelistComponent implements OnInit {
     const formattedPrice = prix.toLocaleString('fr-FR');
     return formattedPrice.replace(/\s/g, '.');
   }
+  update(id: string){
+    this.router.navigate(['/employeedit/'+id]);
+  }
 
 }
