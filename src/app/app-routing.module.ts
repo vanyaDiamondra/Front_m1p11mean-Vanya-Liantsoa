@@ -15,6 +15,12 @@ import {PreferrenceComponent} from './components/preferrence/preferrence.compone
 import {ProfilComponent} from './components/profil/profil.component';
 import {UpdateComponent} from './components/updatepic/updatepic.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { EmployelistComponent } from './components/employelist/employelist.component';
+import { ProfileEditComponent } from './components/profiledit/profiledit.component';
+import { EmployeEditComponent } from './components/employeedit/employeedit.component';
+import { EmployeCreateComponent } from './components/employecreate/employecreate.component';
+import { ServiceEditComponent } from './components/serviceedit/serviceedit.component';
+import { ServiceListComponent } from './components/servicelist/servicelist.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -32,6 +38,13 @@ const routes: Routes = [
   {path: 'profil', component: ProfilComponent},
   {path:'updatepic',component: UpdateComponent},
   {path: 'stat', component: StatisticsComponent},
+  {path:'emplist',component: EmployelistComponent},
+  {path:'profiledit',component: ProfileEditComponent},
+  {path:'employeedit/:id',component: EmployeEditComponent},
+  {path:'employecreate',component: EmployeCreateComponent},
+
+  {path:'servicelist',component: ServiceListComponent},
+  {path:'serviceedit/:id',component: ServiceEditComponent},
 ];
 
 @NgModule({

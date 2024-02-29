@@ -1,0 +1,67 @@
+<div *ngIf="chargementEnCours">
+  <app-loader></app-loader>
+</div>
+
+<div *ngIf="!chargementEnCours">
+  <app-managersidebar></app-managersidebar>
+
+
+  <section class="overflow-hidden" id="service-sec">
+      <div class="container">
+          <div class="title-area text-center"><span class="sub-title style2">Nos services</span> <img
+                  src="assets/img/theme-img/title_shape_1.svg" alt="">
+              <h2 class="sec-title">Choisissez nos services exclusifs</h2>
+          </div>
+          <div class="row">
+              <div class="col-xl-3">
+                  <div class="widget widget_search">
+                      <form class="search-form" (ngSubmit)="searchKeyWords()">
+                          <input type="text" [(ngModel)]="searchElements.keyWords" name="keyWords" placeholder="Rechercher">
+                          <button type="submit"><i class="far fa-search"></i></button>
+                      </form>
+                  </div>
+                  <div class="widget widget_categories">
+                      <h3 class="widget_title">Categories</h3>
+                      <ul>
+                          <li><a (click) = "searchByCategories('')"><img src="assets/img/theme-img/flower.svg" alt=""> Tous</a></li>
+                          <li *ngFor="let categories of servicesCategoriesList">
+                              <a (click) = "searchByCategories(categories._id)"><img src="assets/img/theme-img/flower.svg" alt=""> {{ categories.nom }}</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-9">
+                  <div class="row">
+                      <div class="col-xl-4" *ngFor="let services of donneesAffichees">
+                          <div class="price-card wow fadeInLeft">
+                              <div class="price-card_content">
+                                  <img [src]="services.image" alt="Veuillez-patienter" style="display: block; margin: auto; width: 60%; border-radius: 50%;">
+                                  <hr class="style1">
+                                  <div class="available-list">
+                                      <ul>
+                                          <li><img src="assets/img/theme-img/title_left.svg" alt=""> <b>{{ services.nom }}</b></li>
+                                          <li> <i class="fa-light fa-wallet"></i> {{ getFormattedPrice(services.prix) }} Ar</li>
+                                          <li><i class="fa-light fa-clock"></i> {{ services.duree }} min</li>
+                                          <li (click)="update(services._id)"><i class="far fa-edit" ></i> Modifier</li>
+                                      </ul>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="th-pagination text-center pt-50">
+                          <ul>
+                              <li *ngFor="let pageNumber of getPageNumbers()">
+                                  <a href="javascript:void(0);" (click)="setPage(pageNumber)">{{ pageNumber }}</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+          </div>
+
+          </div>
+      </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>

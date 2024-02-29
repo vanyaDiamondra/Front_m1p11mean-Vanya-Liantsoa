@@ -101,4 +101,17 @@ export class ServicesService {
 
 
 
+  updateServiceInfo(data :any,id:string) :Observable<any> {
+    return this.http.post(baseurl+'/service/update/'+id, data);
+  }
+  createService(data :any) :Observable<any> {
+    return this.http.post(baseurl+'/service/create', data);
+  }
+
+  getUserInfo(id:string):Promise<any> {
+    return this.http.get<any>(baseurl + '/service/findbyid/'+id).toPromise();
+  }
+
+
+
 }
